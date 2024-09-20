@@ -17,21 +17,15 @@ const Register = () => {
 
         <>
         <form onSubmit={handleSubmit}>
-            <label>
-                First Name:
-            </label>
+            <label>First Name: </label>
             <input type="text" value={FName} onChange={(e) =>
             setFName(e.target.value)} />
 
-            <label>
-                Last Name:
-            </label>
+            <label>Last Name: </label>
             <input type="text" value={LName} onChange={(e) =>
             setLName(e.target.value)} />
 
-            <label>
-                Email:
-            </label>
+            <label>Email: </label>
             <input type="text" value={Email} onChange={(e) =>
             setEmail(e.target.value)} />
 
