@@ -1,4 +1,3 @@
-import './Page1.css';
 import React from 'react';
 
 const Register = () => {

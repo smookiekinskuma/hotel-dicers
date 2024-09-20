@@ -1,6 +1,4 @@
-import './Page1.css';
 import React from 'react';
-
 import { Outlet, Link } from 'react-router-dom';
 
 const Admin = () => {
