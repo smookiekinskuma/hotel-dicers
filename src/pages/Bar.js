@@ -8,7 +8,7 @@ const Bar = () => {
         <>
         <Container fluid>
             <Row>
-                <Col><Link to ="/Home">Hotel Dicers</Link></Col>
+                <Col><Link to ="/">Hotel Dicers</Link></Col>
                 <Col><Link to ="/Login">Login</Link></Col>
                 <Col><Link to ="/Register">Register</Link></Col>
                 <Col><Link to ="/Admin">Admin</Link></Col>
