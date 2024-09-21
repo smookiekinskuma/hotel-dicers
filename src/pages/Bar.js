@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import "../CSS/Navbar.css"
+import "../CSS/Home.css"
 
 /*if you want to use a image, try to use this:
 

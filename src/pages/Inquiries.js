@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Inquiries = () => {
     const [Title, setTitle] = useState('');
@@ -15,11 +16,11 @@ const Inquiries = () => {
         <>
         <h1>Inquiries/Reviews</h1>
 
-        <Container fluid>
+        <Container fluid id="container">
             <Row>
-                <Col><Link to ="/">Home</Link></Col>
-                <Col><Link to ="/Room">Room</Link></Col>
-                <Col><Link to ="/Event">Event</Link></Col>
+                <Col xs={{ order: 'first'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                <Col xs={{ order: 'second' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
             </Row>
         </Container>
 
@@ -27,15 +28,21 @@ const Inquiries = () => {
             <label>
                 Title:
             </label>
-            <input type="text" value={Title} onChange={(e) =>
-            setTitle(e.target.value)} />
+            <div class="input-box">
+                <input type="text" value={Title} onChange={(e) =>
+                setTitle(e.target.value)} />
+            </div>
 
             <label>
                 Desctiption:
             </label>
-            <input type="text" value={Desc} onChange={(e) =>
-            setDesc(e.target.value)} />
-            <button type="submit">Submit</button>
+            <div class="input-box">
+                <input type="text" value={Desc} onChange={(e) =>
+                setDesc(e.target.value)} />
+            </div>
+            
+
+            <Button type="submit" class="btn">Submit</Button>
         </form>
 
         <Outlet />

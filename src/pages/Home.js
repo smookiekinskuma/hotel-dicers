@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
-import "../CSS/Home.css"
 const Home = () => {
     return (
         <html>

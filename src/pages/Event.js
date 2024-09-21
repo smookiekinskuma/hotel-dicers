@@ -1,11 +1,11 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Event = () => {
     const [startDate, setStartDate] = useState(null);
@@ -20,11 +20,11 @@ const Event = () => {
         <>
         <h1>Event Booking</h1>
 
-        <Container fluid>
+        <Container fluid id="container">
             <Row>
-                <Col><Link to ="/">Home</Link></Col>
-                <Col><Link to ="/Room">Room</Link></Col>
-                <Col><Link to ="/Inquiries">Inquiries</Link></Col>
+                <Col xs={{ order: 'first'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                <Col xs={{ order: 'second' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
             </Row>
         </Container>
 
@@ -41,14 +41,18 @@ const Event = () => {
             />
 
             <label>No. of Guests: </label>
-            <input type="text" value={Guests} onChange={(e) =>
-            setGuests(e.target.value)} />
+            <div class="input-box">
+                <input type="text" value={Guests} onChange={(e) =>
+                setGuests(e.target.value)} />
+            </div>
 
             <label>Type of Event: </label>
-            <input type="text" value={Event} onChange={(e) =>
-            setEvent(e.target.value)} />
+            <div class="input-box">
+                <input type="text" value={Event} onChange={(e) =>
+                setEvent(e.target.value)} />
+            </div>
 
-            <button type="submit">Submit</button>
+            <Button className="btn" type="submit">Submit</Button>
         </form>
 
         <Outlet />
