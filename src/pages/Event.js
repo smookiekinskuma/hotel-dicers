@@ -18,12 +18,13 @@ const Event = () => {
     }
     return (
         <>
-        <h1>Event Booking</h1>
+        <h1 class="font-size">Event Booking</h1>
 
         <Container fluid id="container">
             <Row>
-                <Col xs={{ order: 'first'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                <Col xs={{ order: 'second' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
+                <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
                 <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
             </Row>
         </Container>
