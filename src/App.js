@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route>
-          <Route path="/" element={<Bar />}>
+          <Route path="/"element={<Bar />}>
             <Route path="/" element={<Home />} />
             <Route path="/Room" element={<Room />} />
             <Route path="/Event" element={<Event />} />        
@@ -44,7 +44,6 @@ function App() {
     </BrowserRouter>
   )
 }
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 export default App;

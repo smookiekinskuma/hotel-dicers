@@ -1,0 +1,91 @@
+@font-face {
+    font-family: TypeMonster;
+    src: url(/src/Fonts/TypeMons/TypeMonster.otf);
+}
+
+@font-face {
+    font-family: Limelight;
+    src: url(/src/Fonts/Limelight/Limelight-Regular.ttf);
+}
+
+@font-face {
+    font-family: Gowun;
+    src: url(/src/Fonts/Gowun/GowunBatang-Regular.ttf);
+}
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box !important;
+}  
+
+body{
+    min-height: 100vh;
+    background-color: #31081f !important;
+    /*
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    --This is if Image
+    */
+}
+
+header{
+    color: #dce0d9 !important;
+}
+
+/*Text Test, Delete/Modify if needed*/
+h1{
+    font-family: TypeMonster;
+    text-align: center;
+}
+
+/*class="Col", Setting for Routing*/
+
+.Col{
+    color: #dce0d9;
+    font-family: Gowun;
+    text-decoration: none;
+}
+
+.font-size{
+    font-size: 4em;
+}
+
+/*If logo is not an image*/
+
+.List-text,
+.Logo-text{
+    font-family: Typemonster;
+    font-size: 1.4em;
+    font-weight: 800;
+    color: #dce0d9;
+    list-style: none;
+    text-decoration: none;
+    align-items: left !important;
+    transition: 0.3s ease-in-out;
+}
+
+.List-text,
+.Logo-text:hover{
+    color: #808f85;
+}
+/*Text Testing*/
+.LimeText{
+    font-size: 4em;
+    font-family: Limelight;
+}
+
+.Gowun{
+    font-size: 4em;
+    font-family: Gowun;
+    color: #dce0d9;
+}
+
+/*For Logo image*/
+.profile-photo{
+    height: 100%;
+    width: 50%;
+}
+  

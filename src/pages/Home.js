@@ -1,31 +1,39 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from '../Components/Button';
-import React from 'react';
+import { Button } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
-
+import "../CSS/Home.css"
 const Home = () => {
     return (
-        <main>
-            <header>
-                <Container fluid>
-                    <Row>
-                        <Col><Link to ="/Room">Room</Link></Col>
-                        <Col><Link to ="/Event">Event</Link></Col>
-                        <Col><Link to ="/Inquiries">Inquiries</Link></Col>
-                    </Row>
-                </Container>
-                
+        <html>
+            
+            <main>
+                <header>
+                    <div class="Heading-Text">
+                        <h1 class="font-size">Hotel Dicers -TypeMons</h1>
+                    </div>
+                    <Container fluid id="container">
+                        <Row>
+                            <Col xs={{ order: 'first'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                            <Col xs={{ order: 'second' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                            <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
+                        </Row>
+                    </Container>
+                    
 
-                <Outlet />
-            </header>
-            <body> 
+                    <Outlet />
+                </header>
                 <div>
-                    <h1>Home Page</h1>
+                    <p class="Gowun">Basic Font -Gowun</p>
+
+                    <Button>Test</Button>
                 </div>
-            </body>
-        </main>
+
+            </main>
+            
+        </html>
     )
 }
 

@@ -1,0 +1,21 @@
+#container{
+ width: 100%;
+ padding: 20px;
+ background-color: #d7b3b7;
+}
+
+.Heading-Text{
+    height: 100vh;
+    padding: 20px;
+}
+
+.Text{
+    text-decoration: none;
+}
+
+.Home{
+    font-size: 4em;
+    font-family: Gowun;
+    color: #31081f;
+    text-align: center;
+}
