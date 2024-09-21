@@ -11,7 +11,7 @@ const Home = () => {
             <header>
                 <Container fluid>
                     <Row>
-                        <Col><Link to ="/Room"><Button>Room</Button></Link></Col>
+                        <Col><Link to ="/Room">Room</Link></Col>
                         <Col><Link to ="/Event">Event</Link></Col>
                         <Col><Link to ="/Inquiries">Inquiries</Link></Col>
                     </Row>
