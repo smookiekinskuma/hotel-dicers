@@ -20,30 +20,28 @@ import Inboxbook from './pages/adminpages/Inboxroom';
 
 function App() {
   return (
-   <>
-
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Bar />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/Room" element={<Room />} />
-          <Route path="/Event" element={<Event />} />        
-          <Route path="/Inquiries" element={<Inquiries />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
-          <Route path="/Admin" element={<Admin />}>
-            <Route path="/Admin/Guest" element={<Guestbook />} />
-            <Route path="/Admin/Room" element={<Roombook />} />
-            <Route path="/Admin/Venue" element={<Venuebook />} />
-            <Route path="/Admin/Staff" element={<Staffbook />} />
-            <Route path="/Admin/Form" element={<Formbook />} />
-            <Route path="/Admin/Inbox" element={<Inboxbook />} />
+        <Route>
+          <Route path="/" element={<Bar />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/Room" element={<Room />} />
+            <Route path="/Event" element={<Event />} />        
+            <Route path="/Inquiries" element={<Inquiries />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
+            <Route path="/Admin" element={<Admin />}>
+              <Route path="/Admin/Guest" element={<Guestbook />} />
+              <Route path="/Admin/Room" element={<Roombook />} />
+              <Route path="/Admin/Venue" element={<Venuebook />} />
+              <Route path="/Admin/Staff" element={<Staffbook />} />
+              <Route path="/Admin/Form" element={<Formbook />} />
+              <Route path="/Admin/Inbox" element={<Inboxbook />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
     </BrowserRouter>
-
-   </> 
   )
 }
 
