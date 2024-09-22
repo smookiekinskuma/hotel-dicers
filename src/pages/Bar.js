@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import "../CSS/Navbar.css"
-import "../CSS/Home.css"
+import "../CSS/Navbar.css";
+import "../CSS/Home.css";
 
 /*if you want to use a image, try to use this:
 
@@ -38,9 +38,9 @@ class Bar extends Component {
                         <ul id="Navbar" className={this.state.clicked ? 
                             "#Navbar active" : "#Navbar"}>
                             <li className="active"></li> 
-                            <li><Link to ="/Login" class="a">Login</Link></li>
-                            <li><Link to ="/Register" class="a">Register</Link></li>
-                            <li><Link to ="/Admin" class="a">Admin</Link></li>
+                            <li><Link to ="/Login" class="a login">Login</Link></li>
+                            <li><Link to ="/Register" class="a reg">Register</Link></li>
+                            <li><Link to ="/Admin" class="a admin">Admin</Link></li>
                         </ul>
                     </div>   
 
@@ -48,6 +48,7 @@ class Bar extends Component {
                         <i id="Hambar" className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                     </div>
                 </nav>
+                
                 <Outlet />
             </>
         )

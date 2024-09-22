@@ -88,12 +88,15 @@ label{
     text-decoration: none;
 }
 
-.font-size{
-    font-size: 4em;
+.Heading-Text .font-size{
+    font-size: 8em;
+    font-weight: 900;
 }
 
-.subfont-size{
-    font-size: 2em;
+.Heading-Text .subfont-size{
+    font-size: 1.8em;
+    font-family: Gowun;
+    font-weight: 800;
 }
 
 /*If logo is not an image*/
@@ -132,4 +135,12 @@ label{
 .profile-photo{
     height: 100%;
     width: 50%;
+}
+
+/*GridList-i.e. Home, Room, Events, Inquiries Tab*/
+.Home{
+    font-size: 2em;
+    font-family: Gowun;
+    color: #31081f;
+    text-align: center;
 }

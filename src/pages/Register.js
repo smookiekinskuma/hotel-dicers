@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Register = () => {
     const [FName, setFName] = useState('');
@@ -13,37 +14,44 @@ const Register = () => {
 
     return (
         <>
-        <h1>Register</h1>
+            <motion.div
+                initial={{opacity: 0}}
+                animate={{opacity: 1 }}
+                exit={{opacity: 0}}
+            >
+                <h1>Register</h1>
 
-        <>
-        <form onSubmit={handleSubmit}>
-            <label>First Name: </label>
-            <input type="text" value={FName} onChange={(e) =>
-            setFName(e.target.value)} />
+                <>
+                    <form onSubmit={handleSubmit}>
+                        <label>First Name: </label>
+                        <input type="text" value={FName} onChange={(e) =>
+                        setFName(e.target.value)} />
 
-            <label>Last Name: </label>
-            <input type="text" value={LName} onChange={(e) =>
-            setLName(e.target.value)} />
+                        <label>Last Name: </label>
+                        <input type="text" value={LName} onChange={(e) =>
+                        setLName(e.target.value)} />
 
-            <label>Email: </label>
-            <input type="text" value={Email} onChange={(e) =>
-            setEmail(e.target.value)} />
+                        <label>Email: </label>
+                        <input type="text" value={Email} onChange={(e) =>
+                        setEmail(e.target.value)} />
 
-            <label>
-                Password:
-            </label>
-            <input type="text" value={Password} onChange={(e) =>
-            setPassword(e.target.value)} />
+                        <label>
+                            Password:
+                        </label>
+                        <input type="text" value={Password} onChange={(e) =>
+                        setPassword(e.target.value)} />
 
-            <label>
-                Repeat Password:
-            </label>
-            <input type="text" value={RPassword} onChange={(e) =>
-            setRPassword(e.target.value)} />
+                        <label>
+                            Repeat Password:
+                        </label>
+                        <input type="text" value={RPassword} onChange={(e) =>
+                        setRPassword(e.target.value)} />
 
-            <button type="submit">Submit</button>
-        </form>
-        </>
+                        <button type="submit">Submit</button>
+                    </form>
+                </>
+
+            </motion.div>
         </>
     )
 }

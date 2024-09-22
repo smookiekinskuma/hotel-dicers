@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Login = () => {
     const [Email, setEmail] = useState('');
@@ -11,24 +12,33 @@ const Login = () => {
     return (
         <html>
             <main>
-                <h1>Login</h1>
+                <motion.div
+                    
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1 }}
+                    exit={{opacity: 0}}
+                
+                >
+                    <h1>Login</h1>
 
-                <>
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            Email:
-                        </label>
-                        <input type="text" value={Email} onChange={(e) =>
-                        setEmail(e.target.value)} />
+                    <>
+                        <form onSubmit={handleSubmit}>
+                            <label>
+                                Email:
+                            </label>
+                            <input type="text" value={Email} onChange={(e) =>
+                            setEmail(e.target.value)} />
 
-                        <label>
-                            Password:
-                        </label>
-                        <input type="text" value={Password} onChange={(e) =>
-                        setPassword(e.target.value)} />
-                        <button type="submit">Submit</button>
-                    </form>
-                </>
+                            <label>
+                                Password:
+                            </label>
+                            <input type="text" value={Password} onChange={(e) =>
+                            setPassword(e.target.value)} />
+                            <button type="submit">Submit</button>
+                        </form>
+                    </>
+                </motion.div>
+                
             </main>
         </html>
     )

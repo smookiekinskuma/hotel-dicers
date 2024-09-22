@@ -1,19 +1,22 @@
 #container{
- width: 100%;
- background-color: #d7b3b7;
+    width: 80%;
+    background-color: #dce0d9;
+    border-radius: 20px;
+    padding-top: 10px;
+    height: 70px;
 }
 
 .Heading-Text{
     padding: 20px;
 }
 
-.Text{
+#container .Text{
     text-decoration: none;
+    text-align: center;
 }
 
-.Home{
-    font-size: 2em;
-    font-family: Gowun;
-    color: #31081f;
-    text-align: center;
+
+.Home-P{
+    padding: 20px;
+    justify-content: center;
 }

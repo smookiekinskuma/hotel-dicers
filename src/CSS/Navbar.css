@@ -5,6 +5,8 @@ nav{
     background-color: #6b0f1a;
     padding: 5px 60px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    position: sticky; top: 0;
+    z-index: 999;
 }
 
 #Navbar{
@@ -29,43 +31,53 @@ nav{
 
 #Navbar.active{
     right: 0px;
+    position: fixed;
 }
 
 #Navbar li{
     list-style: none;
-    padding: 10px 40px;
+    padding: 20px 30px;
     position: relative;
 }
 #Navbar li .a{
     margin-bottom: 25px;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: #dce0d9;
     font-family: Typemonster;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in-out;
 }
 
 #Navbar li .a:hover{
-    color: #808f85;
+    display: grid;
+    width: 300px;
+    color: #31081f;
     font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
+    font-weight: 900;
+    font-style: italic;
     background-color: #e4cbce;
-    padding: 20px 80px;
     min-width: 100%;
-    text-align: center;
-    border-radius: 1 solid;
-    margin: 20px;
-    flex: 1;
-    right: 100px;
+    border-radius: 10px;/*corner-Rounding, for Hover in Nav*/
+}
+
+#Navbar li .a.login:hover{
+    padding: 20px 80px;
+}
+
+#Navbar li .a.reg:hover{
+    padding: 20px 60px;
+}
+
+#Navbar li .a.admin:hover{
+    padding: 20px 80px;
 }
 
 #Navbar li .a:hover::after{
-    content: "";
+    content: " ";
     width: 30%;
     height: 2px;
-    background: #808f85;
+    background: #31081f;
     bottom: -4px;
     left: 80px;
 }
@@ -76,7 +88,7 @@ nav{
 
 #Hamburger i{
     color: #dce0d9;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
 }
 
