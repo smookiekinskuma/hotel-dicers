@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+/*Register Page*/
+
 const Register = () => {
     const [FName, setFName] = useState('');
     const [LName, setLName] = useState('');
@@ -22,7 +24,7 @@ const Register = () => {
                 <h1>Register</h1>
 
                 <>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}> {/*Form for registering*/}
                         <label>First Name: </label>
                         <input type="text" value={FName} onChange={(e) =>
                         setFName(e.target.value)} />

@@ -6,6 +6,8 @@ import { Outlet, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
+/*Inquiries/Reviews - Where people can submit reviews or inquiries*/
+
 const Inquiries = () => {
     const [Title, setTitle] = useState('');
     const [Desc, setDesc] = useState('');
@@ -16,15 +18,14 @@ const Inquiries = () => {
     return (
         <>
             <motion.div
-                
                 initial={{opacity: 0}}
                 animate={{opacity: 1 }}
-                exit={{opacity: 0}}           
-
+                exit={{opacity: 0}}
             >
+                
                 <h1 class="font-size">Inquiries/Reviews</h1>
 
-                <Container fluid id="container">
+                <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
@@ -33,7 +34,7 @@ const Inquiries = () => {
                     </Row>
                 </Container>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}> {/*Form to make a review*/}
                     <label>
                         Title:
                     </label>

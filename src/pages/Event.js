@@ -8,6 +8,8 @@ import { Outlet, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
+/*Event Booking - Where people will be booking venues for events/meetings*/
+
 const Event = () => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
@@ -19,16 +21,15 @@ const Event = () => {
     }
     return (
         <>
-            <motion.div
-                
+            <motion.div  
                 initial={{opacity: 0}}
                 animate={{opacity: 1 }}
                 exit={{opacity: 0}}     
-                
             >
+
                 <h1 class="font-size">Event Booking</h1>
 
-                <Container fluid id="container">
+                <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
@@ -37,7 +38,7 @@ const Event = () => {
                     </Row>
                 </Container>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}> {/*Form to book a venue*/}
                     <label>Starting Date: </label>
                     <DatePicker
                         selected={startDate}

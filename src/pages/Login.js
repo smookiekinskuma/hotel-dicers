@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+/*Login Page*/
+
 const Login = () => {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
@@ -13,16 +15,15 @@ const Login = () => {
         <html>
             <main>
                 <motion.div
-                    
                     initial={{opacity: 0}}
                     animate={{opacity: 1 }}
                     exit={{opacity: 0}}
-                
                 >
+
                     <h1>Login</h1>
 
                     <>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}> {/*Form for logging in*/}
                             <label>
                                 Email:
                             </label>

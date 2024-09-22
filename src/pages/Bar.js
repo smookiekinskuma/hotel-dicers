@@ -3,6 +3,8 @@ import { Outlet, Link } from 'react-router-dom';
 import "../CSS/Navbar.css";
 import "../CSS/Home.css";
 
+/* Main top bar of the website */
+
 /*if you want to use a image, try to use this:
 
 import ProfilePicture from '../images/image.png';
@@ -34,7 +36,7 @@ class Bar extends Component {
                 <nav>
                     <li class="List-text"><Link to ="/" class="Logo-text">Hotel Dicers</Link></li>
 
-                    <div>
+                    <div> {/*The right bar that appears after clicking the hamburger icon*/}
                         <ul id="Navbar" className={this.state.clicked ? 
                             "#Navbar active" : "#Navbar"}>
                             <li className="active"></li> 
@@ -44,7 +46,7 @@ class Bar extends Component {
                         </ul>
                     </div>   
 
-                    <div id="Hamburger" onClick={this.handleClick}>
+                    <div id="Hamburger" onClick={this.handleClick}> {/*Hamburger Bar that shows Login, Register, and Admin*/}
                         <i id="Hambar" className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                     </div>
                 </nav>
