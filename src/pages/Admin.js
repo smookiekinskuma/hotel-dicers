@@ -7,7 +7,13 @@ import { motion } from 'framer-motion';
 const Admin = () => {
     return ( 
         <>
-            <motion.div>
+            <motion.div
+            
+                initial={{opacity: 0}}
+                animate={{opacity: 1 }}
+                exit={{opacity: 0}}
+            
+            >
                 <h1>Admin Page</h1>
 
                 <div> {/*Bar for accessing different bookings/lists*/}

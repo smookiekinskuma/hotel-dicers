@@ -1,13 +1,32 @@
-#container{
+#container-home{
+    align-items: center;
     width: 80%;
-    background-color: #dce0d9;
-    border-radius: 20px;
-    padding-top: 10px;
-    height: 70px;
+    padding: 30px 40px;
+    margin: auto;
 }
+
+#container-home .Temporary{
+    color: #dce0d9;
+    font-family: Gowun;
+    font-size: 1em;
+    font-weight: 200;
+    text-align: center;
+}
+
 
 .Heading-Text{
     padding: 20px;
+}
+
+.Heading-Text .font-size{
+    font-size: 8em;
+    font-weight: 900;
+}
+
+.Heading-Text .subfont-size{
+    font-size: 1.8em;
+    font-family: Gowun;
+    font-weight: 800;
 }
 
 #container .Text{

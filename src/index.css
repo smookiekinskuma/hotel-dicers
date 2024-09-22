@@ -1,3 +1,26 @@
+/*This Files Contains index prefences*/
+
+@font-face {
+  font-family: TypeMonster;
+  src: url(/src/Fonts/TypeMons/TypeMonster.otf);
+}
+
+@font-face {
+  font-family: Limelight;
+  src: url(/src/Fonts/Limelight/Limelight-Regular.ttf);
+}
+
+@font-face {
+  font-family: Gowun;
+  src: url(/src/Fonts/Gowun/GowunBatang-Regular.ttf);
+}
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box !important;
+} 
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,27 +1,23 @@
+// information:
+
+// --------------------------------------------------------------------------
+// NAVIGATION BAR:
+// --------------------------------------------------------------------------
+// -->"List-text" & "Logo-text" are located in App.css
+// -->Try not to modify this file carelessly, it will have a breakdown.
+// --------------------------------------------------------------------------
+// CSS:
+// --------------------------------------------------------------------------
+// Use IDs to identify <div>'s as parent instead of child, this would prevent node errors.
+// --------------------------------------------------------------------------
+// HOW TO COMMENT INSIDE COMPONENTS, CLASSES, CONSTS & FUNCTION:
+// --------------------------------------------------------------------------
+// refer to line 41
+// --------------------------------------------------------------------------
+// End of Information
 import { Component } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import "../CSS/Navbar.css";
-import "../CSS/Home.css";
-
-/* Main top bar of the website */
-
-/*if you want to use a image, try to use this:
-
-import ProfilePicture from '../images/image.png';
-<Link to ="/"><img className="profile-photo" src={ProfilePicture} alt=""/></Link>
-
---------------------------------------------------------------------------
-
-Important!
-
-Please do not remove "<i className="active"></i>" this determines if the page is active or not. every page in the navigation is active but I only need one active className. This was my workaround -dani o7
-
-To explain our navigation Bar:
-
--body/main can't be used inside of render since what we are calling are a class instead of consts, fortunately bar is nested in home so it's still reading the body css in that area.
-
--"List-text" & "Logo-text"is located in App.css, besides that mostly are in the Navbar.css
-*/
+import '../CSS/Navbar.css';
 
 class Bar extends Component {
     state = { clicked : false };
@@ -30,16 +26,21 @@ class Bar extends Component {
     }
     
     render() {
-    
         return (
             <>
-                <nav>
-                    <li class="List-text"><Link to ="/" class="Logo-text">Hotel Dicers</Link></li>
+                <div id="nav">
+                    <div id="parent-container">    
+                        <li class="List-text"><Link to ="/" class="Logo-text">Hotel Dicers</Link></li>
+                        {/* import ProfilePicture from '../images/image.png'; <-- import tag
+                        <Link to ="/"><img className="profile-photo" src={ProfilePicture} alt=""/></Link> <--copy here
+                            Use this for Image Logo. -dani
+                        */}
+                    </div>
 
-                    <div> {/*The right bar that appears after clicking the hamburger icon*/}
+                    <div id="parent-container">
                         <ul id="Navbar" className={this.state.clicked ? 
                             "#Navbar active" : "#Navbar"}>
-                            <li className="active"></li> 
+                            <li className="active"></li> {/*<-- DO NOT REMOVE --*/}
                             <li><Link to ="/Login" class="a login">Login</Link></li>
                             <li><Link to ="/Register" class="a reg">Register</Link></li>
                             <li><Link to ="/Admin" class="a admin">Admin</Link></li>
@@ -49,8 +50,7 @@ class Bar extends Component {
                     <div id="Hamburger" onClick={this.handleClick}> {/*Hamburger Bar that shows Login, Register, and Admin*/}
                         <i id="Hambar" className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
                     </div>
-                </nav>
-                
+                </div>
                 <Outlet />
             </>
         )

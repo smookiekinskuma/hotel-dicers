@@ -1,4 +1,4 @@
-nav{
+#nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,6 +6,11 @@ nav{
     padding: 5px 60px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     position: sticky; top: 0;
+    z-index: 1;
+}
+
+#parent-container{
+    /* padding: 5px; */
     z-index: 999;
 }
 
@@ -23,8 +28,8 @@ nav{
     right: -300px;
     width: 300px;
     height: 100vh;
-    background: #5e0e17;
-    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    background: #6b0f1a;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
     padding: 40px 0 0 10px;
     transition: 0.5s ease-in-out;
 }
@@ -91,6 +96,16 @@ nav{
     font-size: 32px;
     cursor: pointer;
 }
+
+/*Contains Home, Room, Events & inquiries*/
+#container{
+    width: 80%;
+    background-color: #dce0d9;
+    border-radius: 20px;
+    padding-top: 10px;
+    height: 70px;
+}
+
 
 @media screen and (max-width:769px) {
     /*incase some columns need to get adjusted*/
