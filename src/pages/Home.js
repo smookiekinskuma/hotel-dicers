@@ -11,7 +11,8 @@ const Home = () => {
             <main>
                 <header>
                     <div class="Heading-Text">
-                        <h1 class="font-size">Hotel Dicers -TypeMons</h1>
+                        <h1 class="font-size">Hotel Dicers</h1>
+                        <h1 class="subfont-size">Make the cake, and eat it too.</h1>
                     </div>
                     <Container fluid id="container">
                         <Row>
@@ -26,7 +27,7 @@ const Home = () => {
                     <Outlet />
                 </header>
                 <div>
-                    <p class="Gowun">Basic Font -Gowun</p>
+                    <p class="Gowun">Homepage</p>
 
                     <Button>Test</Button>
                 </div>

@@ -92,6 +92,10 @@ label{
     font-size: 4em;
 }
 
+.subfont-size{
+    font-size: 2em;
+}
+
 /*If logo is not an image*/
 
 .List-text,
@@ -118,9 +122,10 @@ label{
 }
 
 .Gowun{
-    font-size: 4em;
+    font-size: 3em;
     font-family: Gowun;
     color: #dce0d9;
+    text-align: center;
 }
 
 /*For Logo image*/
@@ -128,4 +133,3 @@ label{
     height: 100%;
     width: 50%;
 }
-  
