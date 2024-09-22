@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Note: for motion Scripts to work, please run:
+
+### `npm add framer-motion`
+
+Installs framer motion to node modules.\
+
 ## Available Scripts
 
 In the project directory, you can run:
