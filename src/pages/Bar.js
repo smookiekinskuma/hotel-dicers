@@ -12,11 +12,12 @@
 // --------------------------------------------------------------------------
 // HOW TO COMMENT INSIDE COMPONENTS, CLASSES, CONSTS & FUNCTION:
 // --------------------------------------------------------------------------
-// refer to line 41
+// refer to line 42
 // --------------------------------------------------------------------------
 // End of Information
 import { Component } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import ProfilePicture from '../images/Logo2.png';
 import '../CSS/Navbar.css';
 
 class Bar extends Component {
@@ -30,12 +31,11 @@ class Bar extends Component {
             <>
                 <div id="nav">
                     <div id="parent-container">    
-                        <li class="List-text"><Link to ="/" class="Logo-text">Hotel Dicers</Link></li>
-                        {/* import ProfilePicture from '../images/image.png'; <-- import tag
-                        <Link to ="/"><img className="profile-photo" src={ProfilePicture} alt=""/></Link> <--copy here
-                            Use this for Image Logo. -dani
-                        */}
+                        <li class="List-text"><Link to ="/"><img className="profile-photo" src={ProfilePicture} alt="logo"/></Link></li>
                     </div>
+                        {/*
+                        <Link to ="/" class="Logo-text">Hotel Dicers</Link>
+                        */}
 
                     <div id="parent-container">
                         <ul id="Navbar" className={this.state.clicked ? 

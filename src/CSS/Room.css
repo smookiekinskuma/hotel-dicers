@@ -1,4 +1,14 @@
 #header-room{
-    padding: 20px 0;
+    padding: 20px 0 30px 0;
 }
 
+.font-room{
+    font-size: 6em;
+    font-weight: 900;
+    padding-bottom: 40px;
+}
+
+.wrapper{
+    margin: auto;
+    padding: 0 200px;
+}

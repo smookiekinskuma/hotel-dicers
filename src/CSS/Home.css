@@ -1,21 +1,13 @@
-#container-home{
-    align-items: center;
-    width: 80%;
-    padding: 30px 40px;
-    margin: auto;
-}
-
-#container-home .Temporary{
-    color: #dce0d9;
-    font-family: Gowun;
-    font-size: 1em;
-    font-weight: 200;
-    text-align: center;
-}
-
-
 .Heading-Text{
     padding: 20px;
+}
+
+.Heading-Text .profile-Head{
+    display: block;
+    height: 50%;
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Heading-Text .font-size{
@@ -34,8 +26,39 @@
     text-align: center;
 }
 
+#container-home{
+    color: #31081f;
+    align-items: center;
+    width: 80%;
+    padding: 30px 40px;
+    margin: auto;
+    font-family: Gowun;
+    font-size: 1em;
+    font-weight: 200;
+}
+
+#Grid{
+    background-color: #d7b3b7;
+    padding-bottom: 200px;
+    border: 1px solid #31081f;
+    
+}
+
+#Grid-B{
+    background-color: #e4cbce;
+    padding-bottom: 200px;
+    border: 1px solid #31081f;
+}
 
 .Home-P{
     padding: 20px;
     justify-content: center;
+}
+
+.Home-Text{
+    font-size: 2.2em;
+    font-family: Gowun;
+    color: #dce0d9;
+    text-align: center;
+    margin-top: 30px;
 }

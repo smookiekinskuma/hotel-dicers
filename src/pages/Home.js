@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import { Outlet, Link } from 'react-router-dom';
 // import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import ProfilePicture from '../images/Logo1.png';
 
 const Home = () => {
     return (
@@ -18,12 +19,12 @@ const Home = () => {
         >
             <div id="header">
                 <div class="Heading-Text">
-                    <h1 class="font-size">Hotel Dicers</h1>
+                    <img className="profile-Head" src={ProfilePicture} alt="logo"/>
                     <h1 class="subfont-size">Make the cake, and eat it too.</h1>
                 </div>
                 <Container fluid id="container">
                     <Row>
-                        <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
+                        <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home active">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
                         <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
@@ -31,20 +32,19 @@ const Home = () => {
                 </Container>
             </div>
             <div class="Home-P">
-                <p class="Gowun">Homepage</p>
-
+                <p class="Home-Text">Homepage</p>
                 {/* <Button>Test</Button> */}
             </div>
 
             {/*Basic information about the hotel.*/}
             <Container id='container-home'>
                 <Row xs={1} md={3}>
-                    <Col class="Temporary">Mission/Vision</Col>
-                    <Col class="Temporary">About Us</Col>
-                    <Col class="Temporary">Staff</Col>
-                    <Col class="Temporary">Room Images</Col>
-                    <Col class="Temporary">Review Showcase</Col>
-                    <Col class="Temporary">Event Images</Col>
+                    <Col id="Grid-B"><p>Mission/Vision</p></Col>
+                    <Col id="Grid"><p>About Us</p></Col>
+                    <Col id="Grid-B"><p>Staff</p></Col>
+                    <Col id="Grid"><p>Room Images</p></Col>
+                    <Col id="Grid-B"><p>Review Showcase</p></Col>
+                    <Col id="Grid"><p>Event Images</p></Col>
                 </Row>
             </Container>
             <Outlet />

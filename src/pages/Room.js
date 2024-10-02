@@ -33,12 +33,12 @@ const Room = () => {
                 exit={{opacity: 0}}
             >
                 <div id="header-room">{/*Id for parent*/}
-                    <h1 class="font-size">Room Booking</h1>
+                    <h1 class="font-room">Room Booking</h1>
 
                     <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                         <Row>
                             <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
-                            <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                            <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home active">Room</p></Link></Col>
                             <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
                             <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                         </Row>
@@ -48,25 +48,26 @@ const Room = () => {
 
                 <div class="wrapper"> {/*Form to book events*/}
                     <form onSubmit={handleSubmit}>
-                        <label>Starting Date: </label>
-                        <DatePicker
+                        <label><p className="contents">Starting Date: </p></label>
+                        <DatePicker id="input"
                             selected={startDate}
                             onChange={(date) => setStartDate(date)}
                         />
-                        <label>Ending Date: </label>
-                        <DatePicker
+                        <label><p className="contents">Ending Date: </p></label>
+                        <DatePicker id="input"
                             selected={endDate}
                             onChange={(date) => setEndDate(date)}
                         />
 
-                        <label>No. of Guests: </label>
-                        <div class="input-box">
+                        <label><p className="contents">No. of Guests: </p></label>
+                        <div>
                             <input type="text" value={Guests} onChange={(e) =>
-                            setGuests(e.target.value)} />
+                            setGuests(e.target.value)} class="input-box"/>
                         </div>
                         
-
-                        <Button className="btn" type="submit">Submit</Button>
+                        <div class="btn-css">
+                        <Button className="btn" type="submit">Search for Available Rooms</Button>
+                        </div>
                     </form>
                 </div>
                 <Outlet />

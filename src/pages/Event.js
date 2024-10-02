@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import "../CSS/Event.css"
 
 /*Event Booking - Where people will be booking venues for events/meetings*/
 
@@ -33,38 +34,42 @@ const Event = () => {
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home active">Events</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
 
-                <form onSubmit={handleSubmit}> {/*Form to book a venue*/}
-                    <label>Starting Date: </label>
-                    <DatePicker
-                        selected={startDate}
-                        onChange={(date) => setStartDate(date)}
-                    />
-                    <label>Ending Date: </label>
-                    <DatePicker
-                        selected={endDate}
-                        onChange={(date) => setEndDate(date)}
-                    />
+                <div class="wrapper-Event">
+                    <form onSubmit={handleSubmit}> {/*Form to book a venue*/}
+                    <label><p className="contents">Starting Date: </p></label>
+                        <DatePicker id="input"
+                            selected={startDate}
+                            onChange={(date) => setStartDate(date)}
+                        />
+                        <label><p className="contents">Ending Date: </p></label>
+                        <DatePicker id="input"
+                            selected={endDate}
+                            onChange={(date) => setEndDate(date)}
+                        />
 
-                    <label>No. of Guests: </label>
-                    <div class="input-box">
-                        <input type="text" value={Guests} onChange={(e) =>
-                        setGuests(e.target.value)} />
-                    </div>
+                        <label>No. of Guests: </label>
+                        <div>
+                            <input type="text" value={Guests} onChange={(e) =>
+                            setGuests(e.target.value)} class="input-box"/>
+                        </div>
 
-                    <label>Type of Event: </label>
-                    <div class="input-box">
-                        <input type="text" value={Event} onChange={(e) =>
-                        setEvent(e.target.value)} />
-                    </div>
+                        <label><p className="contents">Type of Event: </p></label>
+                        <div>
+                            <input type="text" value={Event} onChange={(e) =>
+                            setEvent(e.target.value)} class="input-box"/>
+                        </div>
 
-                    <Button className="btn" type="submit">Submit</Button>
-                </form>
+                        <div className="Submit">
+                        <Button className="btn" type="submit">Submit</Button>
+                        </div>
+                    </form>
 
+                </div>
                 <Outlet />
             </motion.div>
         </>

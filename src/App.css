@@ -66,7 +66,13 @@ h1{
 /*For Logo image*/
 .profile-photo{
     height: 100%;
-    width: 50%;
+    width: 30%;
+    transition: 0.2s ease-in-out;
+}
+
+.profile-photo:hover{
+    /*color change*/
+    width: 40%;
 }
 
 /*GridList-i.e. Home, Room, Events, Inquiries Tab*/
@@ -75,9 +81,102 @@ h1{
     font-family: Gowun;
     color: #31081f;
     text-align: center;
+    border-radius: 10px;
+    border: 0 solid #31081f;
+}
+
+.Home:hover{
+    background-color: #31081f;
+    color: #dce0d9;
+    padding-top: 20px;
+    font-size: 2.2em;
+}
+
+.Home.active{
+    background-color: #31081f;
+    color: #dce0d9;
+    padding-top: 20px;
+    font-size: 2.2em;
 }
 
 .Temporary{
     color: #dce0d9;
     width: auto;
+}
+
+/*Form*/
+
+form{
+    display: flexbox;
+    background-color: #dce0d9;
+    padding: 100px;
+    margin: 0 200px;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+label{
+    padding: 10px;
+}
+
+#input{
+    border: 2px solid #31081f;
+    border-radius:5px;
+}
+
+.input-box{
+    border: 2px solid #31081f;
+    border-radius: 5px;
+}
+
+.btn{
+    background-color: #6b0f1a;
+    padding: 10px 40px;
+    border: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-css{
+    margin: 0;
+    position: absolute;
+    right: 42%;
+    bottom: 28%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.btn:hover{
+    background-color: #31081f;
+}
+
+.contents{
+    font-family: Gowun !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:769px) {
+    form{
+        display: grid;
+        margin: 20px 0px;
+    }
+    
+}
+
+@media screen and (max-width:1024px){
+    form{
+        display: grid;
+        margin: 20px 0px;
+        padding: 50px 50px 120px 50px;
+    }
+
+    .btn-css{
+        margin: 0;
+        position: absolute;
+        right: 36.3%;
+        bottom: 18%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
 }
