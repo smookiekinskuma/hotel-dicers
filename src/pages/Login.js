@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { Button } from 'react-bootstrap';
+import "../CSS/Login.css";
 /*Login Page*/
 
 const Login = () => {
@@ -23,19 +24,21 @@ const Login = () => {
                     <h1>Login</h1>
 
                     <>
-                        <form onSubmit={handleSubmit}> {/*Form for logging in*/}
+                        <form onSubmit={handleSubmit} className="Log-Form"> {/*Form for logging in*/}
                             <label>
-                                Email:
+                                <p className="contents">Email:</p>
                             </label>
                             <input type="text" value={Email} onChange={(e) =>
-                            setEmail(e.target.value)} />
+                            setEmail(e.target.value)} class="input-box control"/>
 
                             <label>
-                                Password:
+                                <p className="contents">Password:</p>
                             </label>
                             <input type="text" value={Password} onChange={(e) =>
-                            setPassword(e.target.value)} />
-                            <button type="submit">Submit</button>
+                            setPassword(e.target.value)} class="input-box control"/>
+                            <div class="btn-css Login-btn">
+                            <Button className="btn" type="submit">Login</Button>
+                            </div>
                         </form>
                     </>
                 </motion.div>
