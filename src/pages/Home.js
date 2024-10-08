@@ -7,6 +7,9 @@ import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ProfilePicture from '../images/Logo1.png';
 
+import Mission from './homepagecomponents/Mission';
+import About from './homepagecomponents/AboutUs';
+
 const Home = () => {
     return (
         
@@ -39,8 +42,8 @@ const Home = () => {
             {/*Basic information about the hotel.*/}
             <Container id='container-home'>
                 <Row xs={1} md={3}>
-                    <Col id="Grid-B"><p>Mission/Vision</p></Col>
-                    <Col id="Grid"><p>About Us</p></Col>
+                    <Col id="Grid-B"><Mission /></Col>
+                    <Col id="Grid"><About /></Col>
                     <Col id="Grid-B"><p>Staff</p></Col>
                     <Col id="Grid"><p>Room Images</p></Col>
                     <Col id="Grid-B"><p>Review Showcase</p></Col>

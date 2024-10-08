@@ -9,6 +9,8 @@ import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import "../CSS/Event.css"
 
+import EventBox from './components/EventBox'
+
 /*Event Booking - Where people will be booking venues for events/meetings*/
 
 const Event = () => {
@@ -71,6 +73,16 @@ const Event = () => {
 
                 </div>
                 <Outlet />
+
+
+                <h1>Available Venues</h1>
+
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                                
             </motion.div>
         </>
     )

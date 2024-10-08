@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import '../CSS/Room.css';
 
+import RoomBox from './components/RoomBox';
 
 /*Comment*/
 
@@ -71,6 +72,16 @@ const Room = () => {
                     </form>
                 </div>
                 <Outlet />
+                
+
+                <h1>Available Rooms</h1>
+
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
 
             </motion.div>
         </>
