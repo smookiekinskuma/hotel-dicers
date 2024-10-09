@@ -1,4 +1,3 @@
-// import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Outlet } from 'react-router-dom';
 import AnimatedRoutes from './component/AnimatedRoutes';
 import './App.css';
@@ -14,7 +13,5 @@ function App() {
     </BrowserRouter>
   )
 }
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
 
 export default App;

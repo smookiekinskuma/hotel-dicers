@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Outlet, Link } from 'react-router-dom';
-// import { Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import ProfilePicture from '../images/Logo1.png';
 
@@ -29,7 +28,7 @@ const Home = () => {
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home active">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
@@ -48,7 +47,7 @@ const Home = () => {
                     <Col id="Grid-B"><p>Staff</p></Col>
                     <Col id="Grid"><p>Room Images</p></Col>
                     <Col id="Grid-B"><p>Review Showcase</p></Col>
-                    <Col id="Grid"><p>Event Images</p></Col>
+                    <Col id="Grid"><p>Venue Images</p></Col>
                 </Row>
             </Container>
             <Outlet />

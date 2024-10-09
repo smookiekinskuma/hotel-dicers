@@ -1,0 +1,22 @@
+#Adminbody{
+    background-image: url(/public/images/AdminWallpaper.png);
+    background-repeat: repeat-y;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+#AdminNavBar{
+    background-color: #dce0d9;
+}
+
+#AdminH1{
+    font-family: Gowun;
+    color: black !important;
+    font-weight: bolder !important;
+}
+
+#AdminTabText{
+    font-family: Gowun;
+    color: black !important;
+    font-weight: bolder !important;
+}

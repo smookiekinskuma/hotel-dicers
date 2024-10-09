@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import "../CSS/LoginRegister.css"
 
 /*Register Page*/
 
 const Register = () => {
-    const [FName, setFName] = useState('');
-    const [LName, setLName] = useState('');
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
     const [RPassword, setRPassword] = useState('');
+    const [FName, setFName] = useState('');
+    const [LName, setLName] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`First Name: ${FName} Last Name: ${LName} Email: ${Email} Password: ${Password} Repeated Password: ${RPassword}`);
+        alert(`Email: ${Email} Password: ${Password} Repeated Password: ${RPassword} First Name: ${FName} Last Name: ${LName}`);
     }
 
     return (
@@ -24,32 +26,82 @@ const Register = () => {
                 <h1>Register</h1>
 
                 <>
-                    <form onSubmit={handleSubmit}> {/*Form for registering*/}
-                        <label>First Name: </label>
-                        <input type="text" value={FName} onChange={(e) =>
-                        setFName(e.target.value)} />
+                    <form id="LoginReviewform" onSubmit={handleSubmit}> {/*Form for registering*/}
 
-                        <label>Last Name: </label>
-                        <input type="text" value={LName} onChange={(e) =>
-                        setLName(e.target.value)} />
+                        {/*Account*/}
+                        <Row className="mb-3">
 
-                        <label>Email: </label>
-                        <input type="text" value={Email} onChange={(e) =>
-                        setEmail(e.target.value)} />
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Email: </Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" value={Email} onChange={(e) => setEmail(e.target.value)}/>
+                            </Form.Group>
 
-                        <label>
-                            Password:
-                        </label>
-                        <input type="text" value={Password} onChange={(e) =>
-                        setPassword(e.target.value)} />
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Password: </Form.Label>
+                            <Form.Control type="password" placeholder="Password" value={Password} onChange={(e) => setPassword(e.target.value)}/>
+                            </Form.Group>
 
-                        <label>
-                            Repeat Password:
-                        </label>
-                        <input type="text" value={RPassword} onChange={(e) =>
-                        setRPassword(e.target.value)} />
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Repeat Password: </Form.Label>
+                            <Form.Control type="password" placeholder="Repeat Password" value={RPassword} onChange={(e) => setRPassword(e.target.value)}/>
+                            </Form.Group>
 
-                        <button type="submit">Submit</button>
+                        </Row>
+
+                        {/*Full Name*/}
+                        <Row className="mb-3">
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> First Name: </Form.Label>
+                            <Form.Control placeholder="First Name" onChange={(e) => setFName(e.target.value)}/>
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Last Name: </Form.Label>
+                            <Form.Control placeholder="Last Name" onChange={(e) => setLName(e.target.value)}/>
+                            </Form.Group>
+
+                        </Row>
+
+                        {/*Address*/}
+                        <Row className="mb-3">
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel">Address</Form.Label>
+                            <Form.Control placeholder="1234 Main St" />
+                            </Form.Group>
+
+                        </Row>
+
+                        {/*Address pt. 2*/}
+                        <Row className="mb-3">
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel">City</Form.Label>
+                            <Form.Control />
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel">State</Form.Label>
+                            <Form.Select defaultValue="Choose...">
+                                <option>Choose...</option>
+                                <option>...</option>
+                            </Form.Select>
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel">Zip</Form.Label>
+                            <Form.Control />
+                            </Form.Group>
+
+                        </Row>
+
+                        <Form.Group className="mb-3">
+                            <Form.Check type="checkbox" label="I'm willing to share my personal information to the hotel or something" />
+                        </Form.Group>
+
+                        <Button type="submit" className="btn">Submit</Button>                        
+                        
                     </form>
                 </>
 

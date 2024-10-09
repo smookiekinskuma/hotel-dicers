@@ -1,0 +1,19 @@
+#LoginReviewform{
+    display: flexbox;
+    background-color: #dce0d9;
+    padding: 50px;
+    margin: 0 100px;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+#LoginReviewlabel{
+    color: #31081f;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#LoginReviewinput{
+    border: 2px solid #31081f;
+    border-radius:5px;
+}

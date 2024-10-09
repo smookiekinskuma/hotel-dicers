@@ -1,15 +1,10 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Button, Container, Col, Form, Row } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-import { color, motion } from 'framer-motion';
-import Form from 'react-bootstrap/Form';
-import "../CSS/InquiriesReviews.css"
-
+import { motion } from 'framer-motion';
 import { CRating } from '@coreui/react-pro';
 import '@coreui/coreui-pro/dist/css/coreui.min.css'
+import "../CSS/InquiriesReviews.css"
 
 /*Inquiries/Reviews - Where people can submit reviews or inquiries*/
 
@@ -45,7 +40,7 @@ const Inquiries = () => {
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home active">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
@@ -112,7 +107,7 @@ const Inquiries = () => {
                                 <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} />
                             </Form.Group>
 
-                            <Button type="submit" class="btn">Submit</Button>
+                            <Button type="submit" classname="btn">Submit</Button>
                             </form>
 
                     </div>

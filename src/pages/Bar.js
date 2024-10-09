@@ -15,10 +15,13 @@
 // refer to line 42
 // --------------------------------------------------------------------------
 // End of Information
+
 import { Component } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import ProfilePicture from '../images/Logo2.png';
 import '../CSS/Navbar.css';
+
+//The Top Bar
 
 class Bar extends Component {
     state = { clicked : false };

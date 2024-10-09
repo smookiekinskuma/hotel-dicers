@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from 'react-bootstrap';
-import "../CSS/Login.css";
+import { Button, Col, Form, Row } from 'react-bootstrap';
+import "../CSS/LoginRegister.css"
+
 /*Login Page*/
 
 const Login = () => {
@@ -23,24 +24,29 @@ const Login = () => {
 
                     <h1>Login</h1>
 
-                    <>
-                        <form onSubmit={handleSubmit} className="Log-Form"> {/*Form for logging in*/}
-                            <label>
-                                <p className="contents">Email:</p>
-                            </label>
-                            <input type="text" value={Email} onChange={(e) =>
-                            setEmail(e.target.value)} class="input-box control"/>
+                        <form id="LoginReviewform" onSubmit={handleSubmit} className="Log-Form"> {/*Form for logging in*/}
 
-                            <label>
-                                <p className="contents">Password:</p>
-                            </label>
-                            <input type="text" value={Password} onChange={(e) =>
-                            setPassword(e.target.value)} class="input-box control"/>
-                            <div class="btn-css Login-btn">
-                            <Button className="btn" type="submit">Login</Button>
-                            </div>
+                        <Row className="mb-3">
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Email: </Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" value={Email} onChange={(e) => setEmail(e.target.value)}/>
+                            </Form.Group>
+
+                        </Row>
+
+                        <Row className="mb-3">
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Password: </Form.Label>
+                            <Form.Control type="password" placeholder="Password" value={Password} onChange={(e) => setPassword(e.target.value)}/>
+                            </Form.Group>
+
+                        </Row>
+
+                            <Button type="submit" className="btn">Submit</Button>
+                            
                         </form>
-                    </>
                 </motion.div>
                 
             </main>

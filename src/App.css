@@ -21,7 +21,7 @@ body{
 h1{
     font-family: TypeMonster;
     text-align: center;
-    color: #dce0d9 !important;
+    color: #dce0d9;
     padding: 20px;
     font-weight: bold;
 }
@@ -132,6 +132,8 @@ label{
     border: 2px solid #31081f;
     border-radius: 5px;
 }
+
+/*Button*/
 
 .btn{
     background-color: #6b0f1a;

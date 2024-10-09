@@ -13,6 +13,9 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 
+import '../CSS/Admin.css';
+
+
 /* Admin Page - Admins have access to all information such as clients, booking, etc. */
 
 const Admin = () => {
@@ -22,12 +25,15 @@ const Admin = () => {
                 initial={{opacity: 0}}
                 animate={{opacity: 1 }}
                 exit={{opacity: 0}}
-            >
 
+                id="Adminbody"
+            >
+                
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first"> {/*OH MY GOD IT'S THE THING!!  !! ! !*/}
                     <Row>
-                        <Col sm={2}> {/*Bar for accessing different bookings/lists*/}
-                        <h1>Admin Page</h1>
+
+                        <Col sm={2} id="AdminNavBar"> {/*Bar for accessing different bookings/lists*/}
+                        <h1 id="AdminH1">Admin Page</h1>
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item>
                             <Nav.Link eventKey="first">Guest</Nav.Link>
@@ -49,6 +55,7 @@ const Admin = () => {
                             </Nav.Item>
                         </Nav>
                         </Col>
+
                         <Col sm={9}> {/*The Content*/}
                         <Tab.Content>
                             <Tab.Pane eventKey="first"><Guestbook /></Tab.Pane>
@@ -59,6 +66,7 @@ const Admin = () => {
                             <Tab.Pane eventKey="sixth"><Inboxbook /></Tab.Pane>
                         </Tab.Content>
                         </Col>
+
                     </Row>
                 </Tab.Container>
 
