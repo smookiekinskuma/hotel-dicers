@@ -4,17 +4,32 @@ import Col from 'react-bootstrap/Col';
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { color, motion } from 'framer-motion';
+import Form from 'react-bootstrap/Form';
+import "../CSS/InquiriesReviews.css"
+
+import { CRating } from '@coreui/react-pro';
+import '@coreui/coreui-pro/dist/css/coreui.min.css'
 
 /*Inquiries/Reviews - Where people can submit reviews or inquiries*/
 
 const Inquiries = () => {
-    const [Title, setTitle] = useState('');
-    const [Desc, setDesc] = useState('');
-    const handleSubmit = (event) => {
+    const [IHelp, IsetHelp] = useState('');
+    const [ITitle, IsetTitle] = useState('');
+    const [IDesc, IsetDesc] = useState('');
+    const inquirySubmit = (event) => {
         event.preventDefault();
-        alert(`TItle: ${Title} & Description: ${Desc}`);
+        alert(`INQUIRY: Help: ${IHelp} & Title: ${ITitle} & Description: ${IDesc}`);
     }
+
+    const [Rrate, RsetRate] = useState(3)
+    const [RTitle, RsetTitle] = useState('');
+    const [RDesc, RsetDesc] = useState('');
+    const reviewSubmit = (event) => {
+        event.preventDefault();
+        alert(`REVIEW: Rate: ${Rrate} Title: ${RTitle} & Description: ${RDesc}`);
+    }
+
     return (
         <>
             <motion.div
@@ -22,8 +37,9 @@ const Inquiries = () => {
                 animate={{opacity: 1 }}
                 exit={{opacity: 0}}
             >
-                
-                <h1 class="font-size">Inquiries/Reviews</h1>
+
+                <div id="header-inquiry">
+                <h1 class="font-inquiry">Inquiries & Reviews</h1>
 
                 <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                     <Row>
@@ -33,27 +49,74 @@ const Inquiries = () => {
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home active">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
+                </div>
 
-                <form onSubmit={handleSubmit}> {/*Form to make a review*/}
-                    <label>
-                        Title:
-                    </label>
-                    <div class="input-box">
-                        <input type="text" value={Title} onChange={(e) =>
-                        setTitle(e.target.value)} />
+                
+                <div class="parent">
+                    <div class="div1">
+                        <h1>Hotel Reviews</h1>
                     </div>
 
-                    <label>
-                        Desctiption:
-                    </label>
-                    <div class="input-box">
-                        <input type="text" value={Desc} onChange={(e) =>
-                        setDesc(e.target.value)} />
-                    </div>
-                    
+                    <div class="div4">
 
-                    <Button type="submit" class="btn">Submit</Button>
-                </form>
+                        <h1>INQUIRIES</h1>
+
+                            <form id="inquiryreviewform" onSubmit={inquirySubmit}> {/*Form to make an Inquiry*/}
+
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label id="label"> What do you want to inquire about?: </Form.Label>
+                                <Form.Select aria-label="Default select example" value={IHelp} onChange={(e) => IsetHelp(e.target.value)}>
+                                    <option value="About Our Service">About Our Service</option>
+                                    <option value="Help & Assistance">Help & Assistance</option>
+                                    <option value="Complaint">Complaint</option>
+                                    <option value="Hiring">Hiring</option>
+                                    <option value="Business">Business</option>
+                                </Form.Select>
+                            </Form.Group>
+                            
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label id="label"> Title: </Form.Label>
+                                <Form.Control type="text" placeholder="Title" value={ITitle} onChange={(e) => IsetTitle(e.target.value)} />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Label id="label">Description</Form.Label>
+                                <Form.Control as="textarea" rows={3} value={IDesc} onChange={(e) => IsetDesc(e.target.value)} />
+                            </Form.Group>
+
+                            <Button type="submit" class="btn">Submit</Button>
+                            </form>
+
+                    </div>
+
+                    <div class="div5">
+
+                    <h1>LEAVE A REVIEW</h1>
+
+                            <form id="inquiryreviewform" onSubmit={reviewSubmit}> {/*Form to make an Inquiry*/}
+
+                            <div className="d-flex align-items-center">
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Label id="label">Rating:</Form.Label>
+                                <CRating size='lg' onChange={(value) => RsetRate(value)} value={Rrate} />
+                                </Form.Group>
+                            </div>
+                            
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                <Form.Label id="label"> Title: </Form.Label>
+                                <Form.Control type="text" placeholder="Title" value={RTitle} onChange={(e) => RsetTitle(e.target.value)} />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Label id="label">Description</Form.Label>
+                                <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} />
+                            </Form.Group>
+
+                            <Button type="submit" class="btn">Submit</Button>
+                            </form>
+
+                    </div>
+                </div>
 
                 <Outlet />
 

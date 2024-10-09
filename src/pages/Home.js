@@ -39,7 +39,8 @@ const Home = () => {
                 {/* <Button>Test</Button> */}
             </div>
 
-            {/*Basic information about the hotel.*/}
+            {/*Basic information about the hotel.*/}    
+
             <Container id='container-home'>
                 <Row xs={1} md={3}>
                     <Col id="Grid-B"><Mission /></Col>

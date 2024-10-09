@@ -1,12 +1,15 @@
 body{
+    /*
     min-height: 100vh;
     background-color: #31081f !important;
-    /*
-    background-image: url();
-    background-size: cover;
-    background-repeat: no-repeat;
+    */
+    background-image: url(/public/images/HomePageWallpaper.png);
+    background-repeat: repeat-y;
     background-position: center;
+    overflow-x: hidden;
+    /*
     --This is if Image
+    Update: I removed background cover as it gives gaps n all esp at admin page - Divina
     */
 }
 
@@ -20,6 +23,7 @@ h1{
     text-align: center;
     color: #dce0d9 !important;
     padding: 20px;
+    font-weight: bold;
 }
 
 
@@ -180,3 +184,4 @@ label{
         transform: translateY(-50%);
     }
 }
+        

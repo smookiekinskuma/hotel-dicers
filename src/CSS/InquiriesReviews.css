@@ -1,0 +1,115 @@
+.font-inquiry{
+    font-size: 5em;
+    font-weight: 900;
+    padding-bottom: 40px;
+}
+
+#header-inquiry{
+    padding: 20px 0 30px 0;
+}
+
+/*Grids at the Inquiries/Reviews. Shoutout to https://cssgridgenerator.io/*/
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0px;
+}
+    
+.div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+}
+
+.div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.div5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+/*Form*/
+
+#inquiryreviewform{
+    display: flexbox;
+    background-color: #dce0d9;
+    padding: 50px;
+    margin: 0 50px;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+#label{
+    color: #31081f;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#input{
+    border: 2px solid #31081f;
+    border-radius:5px;
+}
+
+.input-box{
+    border: 2px solid #31081f;
+    border-radius: 5px;
+}
+
+.btn{
+    background-color: #6b0f1a;
+    padding: 10px 40px;
+    border: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-css{
+    margin: 0;
+    position: absolute;
+    right: 42%;
+    bottom: 28%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.btn:hover{
+    background-color: #31081f;
+}
+
+.contents{
+    font-family: Gowun !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+    margin-top: 10px;
+}
+
+@media screen and (max-width:769px) {
+    form{
+        display: grid;
+        margin: 20px 0px;
+    }
+    
+}
+
+@media screen and (max-width:1024px){
+    form{
+        display: grid;
+        margin: 20px 0px;
+        padding: 50px 50px 120px 50px;
+    }
+
+    .btn-css{
+        margin: 0;
+        position: absolute;
+        right: 36.3%;
+        bottom: 18%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}

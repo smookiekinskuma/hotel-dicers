@@ -9,7 +9,7 @@ function RoomBox(props){
         <p>{props.Description}</p>
         <p>Maximum number of guests allowed: {props.GuestNo}</p>
         <p>{props.BedNo} {props.BedType}</p>
-        <button>Book!</button>
+        <button class="btn">Book!</button>
     </div>
     )
 }

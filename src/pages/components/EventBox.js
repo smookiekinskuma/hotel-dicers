@@ -8,7 +8,7 @@ function EventBox(props){
         <h3>{props.Name}</h3>
         <p>{props.Description}</p>
         <p>Maximum number of guests allowed: {props.GuestNo}</p>
-        <button>Book!</button>
+        <button class="btn">Book!</button>
     </div>
     )
 }

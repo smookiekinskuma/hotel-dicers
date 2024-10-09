@@ -29,8 +29,8 @@ const Event = () => {
                 animate={{opacity: 1 }}
                 exit={{opacity: 0}}     
             >
-
-                <h1 class="font-size">Event Booking</h1>
+                <div id="header-venue">
+                <h1 class="font-venue">Venue Booking</h1>
 
                 <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                     <Row>
@@ -40,6 +40,7 @@ const Event = () => {
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
+                </div>
 
                 <div class="wrapper-Event">
                     <form onSubmit={handleSubmit}> {/*Form to book a venue*/}
