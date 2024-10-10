@@ -1,11 +1,8 @@
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import DatePicker from "react-datepicker";
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Container, Button, Col, Form, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import '../CSS/Room.css';
 
@@ -19,9 +16,10 @@ const Room = () => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [Guests, setGuests] = useState('');
+    const [Children, setChildren] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests}`);
+        alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests} No. of Children: ${Children}`);
     }
 
     return (
@@ -40,36 +38,59 @@ const Room = () => {
                         <Row>
                             <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                             <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home active">Room</p></Link></Col>
-                            <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Events</p></Link></Col>
+                            <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
                             <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                         </Row>
                     </Container>
                 </div>
                 
 
-                <div class="wrapper"> {/*Form to book events*/}
-                    <form onSubmit={handleSubmit}>
-                        <label><p className="contents">Starting Date: </p></label>
-                        <DatePicker id="input"
-                            selected={startDate}
-                            onChange={(date) => setStartDate(date)}
-                        />
-                        <label><p className="contents">Ending Date: </p></label>
-                        <DatePicker id="input"
-                            selected={endDate}
-                            onChange={(date) => setEndDate(date)}
-                        />
+                <div> {/*Form to book events*/}
 
-                        <label><p className="contents">No. of Guests: </p></label>
-                        <div>
-                            <input type="text" value={Guests} onChange={(e) =>
-                            setGuests(e.target.value)} class="input-box"/>
-                        </div>
+                    <form id="Roomform" onSubmit={handleSubmit}>
+                        {/*Full Name*/}
+                        <Row className="mb-3">
+
+                        <Form.Group as={Col}>
+                        <Form.Label id="label"> Starting Date: </Form.Label>
+                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
+                        </Form.Group>
+
+                        <Form.Group as={Col}>
+                        <Form.Label id="label"> Ending Date: </Form.Label>
+                        <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}/>
+                        </Form.Group>
+
+                        </Row>
+
+                        {/*Full Name*/}
+                        <Row className="mb-3">
+
+                        <Form.Group as={Col}>
+                        <Form.Label id="label"> Number of Guests: </Form.Label>
+                        <Form.Select aria-label="Default select example" value={Guests} onChange={(e) => setGuests(e.target.value)}>
+                            <option value="1 Guest">1 Guest</option>
+                            <option value="2 Guests">2 Guests</option>
+                            <option value="3 Guests">3 Guests</option>
+                            <option value="4 Guests">4 Guests</option>
+                        </Form.Select>
+                        </Form.Group>
+
+                        <Form.Group as={Col}>
+                        <Form.Label id="label"> Number of Children: </Form.Label>
+                        <Form.Select aria-label="Default select example" value={Children} onChange={(e) => setChildren(e.target.value)}>
+                            <option value="1 Children">1 Children</option>
+                            <option value="2 Children">2 Children</option>
+                            <option value="3 Children">3 Children</option>
+                            <option value="4 Children">4 Children</option>
+                        </Form.Select>
+                        </Form.Group>
+
+                        </Row>
                         
-                        <div class="btn-css">
-                        <Button className="btn" type="submit">Search for Available Rooms</Button>
-                        </div>
+                        <Button type="submit" class="btn">Search for Available Rooms</Button>
                     </form>
+
                 </div>
                 <Outlet />
                 

@@ -2,7 +2,6 @@
     background-image: url(/public/images/AdminWallpaper.png);
     background-repeat: repeat-y;
     background-position: center;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -30,7 +29,6 @@
 
 .nav-pills{
     background-color: #dce0d9;
-    margin-left: 1rem;
     position: fixed;
     transition: 200ms ease;
 }
