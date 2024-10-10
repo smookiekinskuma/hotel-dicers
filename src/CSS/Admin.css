@@ -3,20 +3,40 @@
     background-repeat: repeat-y;
     background-position: center;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
+
+
 #AdminNavBar{
+    display: block;
     background-color: #dce0d9;
+    height: 95vh;
 }
 
 #AdminH1{
     font-family: Gowun;
     color: black !important;
-    font-weight: bolder !important;
+    font-size: 28px;
+    font-weight: 900 !important;
 }
 
 #AdminTabText{
     font-family: Gowun;
     color: black !important;
     font-weight: bolder !important;
+}
+
+.Nav-Css{
+    padding: 5px;
+    font-size: 16px;
+}
+
+.nav-link{
+    margin-left: 3rem;
+}
+
+.nav-link.active{
+    background-color: #6b0f1a!important;
 }

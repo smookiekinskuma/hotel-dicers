@@ -33,27 +33,27 @@ const Admin = () => {
                     <Row>
 
                         <Col sm={2} id="AdminNavBar"> {/*Bar for accessing different bookings/lists*/}
-                        <h1 id="AdminH1">Admin Page</h1>
-                        <Nav variant="pills" className="flex-column">
-                            <Nav.Item>
-                            <Nav.Link eventKey="first">Guest</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                            <Nav.Link eventKey="second">Room</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                            <Nav.Link eventKey="third">Venue</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                            <Nav.Link eventKey="fourth">Staff</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                            <Nav.Link eventKey="fifth">Inquiries</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                            <Nav.Link eventKey="sixth">Reviews</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
+                            <h1 id="AdminH1">Admin Page</h1>
+                            <Nav variant="pills" className="flex-column">
+                                <Nav.Item>
+                                <Nav.Link eventKey="first"><p className="Nav-Css">Guest</p></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="second"><p className="Nav-Css">Room</p></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="third"><p className="Nav-Css">Venue</p></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="fourth"><p className="Nav-Css">Staff</p></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="fifth"><p className="Nav-Css">Inquiries</p></Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="sixth"><p className="Nav-Css">Reviews</p></Nav.Link>
+                                </Nav.Item>
+                            </Nav>
                         </Col>
 
                         <Col sm={9}> {/*The Content*/}

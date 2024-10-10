@@ -1,8 +1,4 @@
 body{
-    /*
-    min-height: 100vh;
-    background-color: #31081f !important;
-    */
     background-image: url(/public/images/HomePageWallpaper.png);
     background-repeat: repeat-y;
     background-position: center;
@@ -11,6 +7,18 @@ body{
     --This is if Image
     Update: I removed background cover as it gives gaps n all esp at admin page - Divina
     */
+}
+
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: none;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #6b0f1a;
 }
 
 #header{
