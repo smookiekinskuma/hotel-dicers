@@ -6,6 +6,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../CSS/Event.css"
 
+import { CTimePicker } from '@coreui/react-pro';
+import '@coreui/coreui-pro/dist/css/coreui.min.css'
+import "../CSS/InquiriesReviews.css"
+
 import VenueBox from './components/EventBox'
 
 /*Event Booking - Where people will be booking venues for events/meetings*/
@@ -22,12 +26,12 @@ const Event = () => {
 
 
     const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    const [startTime, setstartTime] = useState(null);
+    const [endTime, setendTime] = useState(null);
     const [Event, setEvent] = useState('');
-    const [Service, setService] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Start Date: ${startDate} End Date: ${endDate} Type of Event: ${Event}`);
+        alert(`Start Date: ${startDate} Type of Event: ${Event} Start: ${startTime} End: ${endTime}`);
     }
     return (
         <>
@@ -54,19 +58,9 @@ const Event = () => {
                     <Row className="mb-3">
 
                     <Form.Group as={Col}>
-                    <Form.Label id="label"> Starting Date: </Form.Label>
+                    <Form.Label id="label"> Date: </Form.Label>
                     <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
                     </Form.Group>
-
-                    <Form.Group as={Col}>
-                    <Form.Label id="label"> Ending Date: </Form.Label>
-                    <DatePicker id="date" selected={endDate} onChange={(date) => setEndDate(date)}/>
-                    </Form.Group>
-
-                    </Row>
-
-                    {/*Full Name*/}
-                    <Row className="mb-3">
 
                     <Form.Group as={Col}>
                     <Form.Label id="label"> Type of Event: </Form.Label>
@@ -78,14 +72,19 @@ const Event = () => {
                     </Form.Select>
                     </Form.Group>
 
+                    </Row>
+
+                    {/*Full Name*/}
+                    <Row className="mb-3">
+
                     <Form.Group as={Col}>
-                    <Form.Label id="label"> Service/s: </Form.Label>
-                    <Form.Select aria-label="Default select example" value={Service} onChange={(e) => setService(e.target.value)}>
-                        <option value="Food and Drinks">Food and Drinks</option>
-                        <option value="Service 1">Service 1</option>
-                        <option value="Service 2">Service 2</option>
-                        <option value="Service 3">Service 3</option>
-                    </Form.Select>
+                    <Form.Label id="label"> Starting Time: </Form.Label>
+                    <Form.Control type="time" value={startTime} onChange={(e) => setstartTime(e.target.value)}/>
+                    </Form.Group>
+
+                    <Form.Group as={Col}>
+                    <Form.Label id="label"> Ending Time: </Form.Label>
+                    <Form.Control type="time" value={endTime} onChange={(e) => setendTime(e.target.value)}/>
                     </Form.Group>
 
                     </Row>

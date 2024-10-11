@@ -1,14 +1,25 @@
 import { Button, Container, Col, Form, Row } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CRating } from '@coreui/react-pro';
 import '@coreui/coreui-pro/dist/css/coreui.min.css'
 import "../CSS/InquiriesReviews.css"
+import ReviewShowcase from './components/ReviewBox';
 
 /*Inquiries/Reviews - Where people can submit reviews or inquiries*/
 
 const Inquiries = () => {
+
+    const [review, setReview] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/reviews')  // Connect to backend API
+          .then(response => response.json())
+          .then(data => setReview(data))
+          .catch(error => console.error('Error fetching Reviews:', error));
+    }, []);
+
     const [IHelp, IsetHelp] = useState('');
     const [ITitle, IsetTitle] = useState('');
     const [IDesc, IsetDesc] = useState('');
@@ -46,15 +57,9 @@ const Inquiries = () => {
                 </Container>
                 </div>
 
-                
-                <div class="parent">
-                    <div class="div1">
-                        <h1>Hotel Reviews</h1>
-                    </div>
-
-                    <div class="div4">
-
-                        <h1>INQUIRIES</h1>
+                        <div class="parent">
+                            <div class="div1">
+                            <h1>INQUIRIES</h1>
 
                             <form id="inquiryreviewform" onSubmit={inquirySubmit}> {/*Form to make an Inquiry*/}
 
@@ -81,12 +86,10 @@ const Inquiries = () => {
 
                             <Button type="submit" class="btn">Submit</Button>
                             </form>
+                            </div>
 
-                    </div>
-
-                    <div class="div5">
-
-                    <h1>LEAVE A REVIEW</h1>
+                            <div class="div2">
+                            <h1>LEAVE A REVIEW</h1>
 
                             <form id="inquiryreviewform" onSubmit={reviewSubmit}> {/*Form to make an Inquiry*/}
 
@@ -96,7 +99,7 @@ const Inquiries = () => {
                                 <CRating size='lg' onChange={(value) => RsetRate(value)} value={Rrate} />
                                 </Form.Group>
                             </div>
-                            
+
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label id="label"> Title: </Form.Label>
                                 <Form.Control type="text" placeholder="Title" value={RTitle} onChange={(e) => RsetTitle(e.target.value)} />
@@ -109,9 +112,15 @@ const Inquiries = () => {
 
                             <Button type="submit" classname="btn">Submit</Button>
                             </form>
+                            </div>
 
-                    </div>
-                </div>
+                            <div class="div3">
+                                <h1>Hotel Reviews</h1>
+                                {review.map((reviewMember, index) => (
+                                    <ReviewShowcase key={index} review={reviewMember}/>
+                                ))}
+                            </div>
+                        </div>
 
                 <Outlet />
 
