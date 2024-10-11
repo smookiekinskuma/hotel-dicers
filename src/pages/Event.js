@@ -1,24 +1,12 @@
-<<<<<<< Updated upstream
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import React, { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-=======
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Container, Button, Col, Form, Row } from 'react-bootstrap';
->>>>>>> Stashed changes
 import { motion } from 'framer-motion';
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import "../CSS/Event.css"
 
-import VenueBox from './components/EventBox';
+import VenueBox from './components/EventBox'
 
 /*Event Booking - Where people will be booking venues for events/meetings*/
 
@@ -35,11 +23,11 @@ const Event = () => {
 
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
-    const [Guests, setGuests] = useState('');
     const [Event, setEvent] = useState('');
+    const [Service, setService] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests} Type of Event: ${Event}`);
+        alert(`Start Date: ${startDate} End Date: ${endDate} Type of Event: ${Event}`);
     }
     return (
         <>
@@ -55,61 +43,65 @@ const Event = () => {
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home active">Events</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home active">Venue</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
                 </div>
 
-                <div class="wrapper-Event">
-                    <form onSubmit={handleSubmit}> {/*Form to book a venue*/}
-                    <label><p className="contents">Starting Date: </p></label>
-                        <DatePicker id="input"
-                            selected={startDate}
-                            onChange={(date) => setStartDate(date)}
-                        />
-                        <label><p className="contents">Ending Date: </p></label>
-                        <DatePicker id="input"
-                            selected={endDate}
-                            onChange={(date) => setEndDate(date)}
-                        />
+                <form id="Venueform" onSubmit={handleSubmit}>
+                    {/*Full Name*/}
+                    <Row className="mb-3">
 
-                        <label>No. of Guests: </label>
-                        <div>
-                            <input type="text" value={Guests} onChange={(e) =>
-                            setGuests(e.target.value)} class="input-box"/>
-                        </div>
+                    <Form.Group as={Col}>
+                    <Form.Label id="label"> Starting Date: </Form.Label>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
+                    </Form.Group>
 
-                        <label><p className="contents">Type of Event: </p></label>
-                        <div>
-                            <input type="text" value={Event} onChange={(e) =>
-                            setEvent(e.target.value)} class="input-box"/>
-                        </div>
+                    <Form.Group as={Col}>
+                    <Form.Label id="label"> Ending Date: </Form.Label>
+                    <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}/>
+                    </Form.Group>
 
-                        <div className="Submit">
-                        <Button className="btn" type="submit">Submit</Button>
-                        </div>
-                    </form>
+                    </Row>
 
-                </div>
+                    {/*Full Name*/}
+                    <Row className="mb-3">
+
+                    <Form.Group as={Col}>
+                    <Form.Label id="label"> Type of Event: </Form.Label>
+                    <Form.Select aria-label="Default select example" value={Event} onChange={(e) => setEvent(e.target.value)}>
+                        <option value="Party">Party</option>
+                        <option value="Meeting">Meeting</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Debut">Debut</option>
+                    </Form.Select>
+                    </Form.Group>
+
+                    <Form.Group as={Col}>
+                    <Form.Label id="label"> Service/s: </Form.Label>
+                    <Form.Select aria-label="Default select example" value={Service} onChange={(e) => setService(e.target.value)}>
+                        <option value="Food and Drinks">Food and Drinks</option>
+                        <option value="Service 1">Service 1</option>
+                        <option value="Service 2">Service 2</option>
+                        <option value="Service 3">Service 3</option>
+                    </Form.Select>
+                    </Form.Group>
+
+                    </Row>
+                        
+                    <Button type="submit" class="btn">Search for Available Venues</Button>
+                </form>
+
                 <Outlet />
 
-
                 <h1>Available Venues</h1>
-<<<<<<< Updated upstream
 
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-=======
                 <>
                     {venue.map(venue => (
                         <VenueBox key={venue.id} venue={venue}/>
                     ))}
                 </>
->>>>>>> Stashed changes
                                 
             </motion.div>
         </>

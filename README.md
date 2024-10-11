@@ -8,6 +8,10 @@ Note: for motion Scripts to work, please run:
 
 Installs framer motion to node modules.\
 
+### `npm install @coreui/react-pro @coreui/coreui-pro`
+
+additional bootstrap for UI.\
+
 ## Available Scripts
 
 In the project directory, you can run:

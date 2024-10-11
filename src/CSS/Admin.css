@@ -2,22 +2,15 @@
     background-image: url(/public/images/AdminWallpaper.png);
     background-repeat: repeat-y;
     background-position: center;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
-}
-
-
-
-#AdminNavBar{
-    display: block;
-    background-color: #dce0d9;
-    height: 95vh;
 }
 
 #AdminH1{
     font-family: Gowun;
     color: black !important;
+    margin-top: 20px;
+    padding: 0 10px;
     font-size: 28px;
     font-weight: 900 !important;
 }
@@ -28,15 +21,151 @@
     font-weight: bolder !important;
 }
 
-.Nav-Css{
-    padding: 5px;
-    font-size: 16px;
+
+#AdminNavBar{
+    height: 93vh;
+}
+    
+
+.nav-pills{
+    background-color: #dce0d9;
+    position: fixed;
+    transition: 200ms ease;
+}
+
+.nav-pills:hover .Nav-Css{
+    display: block;
+}
+
+.nav-pills:hover .nav-link svg{
+    width: 70px;
+}
+
+.nav-item{
+    width: 100%;
+}
+
+.nav-item:last-child{
+    margin-top: auto;
 }
 
 .nav-link{
-    margin-left: 3rem;
+    align-items: center;
+    height: 8rem;
+    margin: 0;
+    display: flex;
+    text-decoration: none;
+    filter: opacity(0.7);
+    transition: .5s ease-in-out;
 }
 
 .nav-link.active{
-    background-color: #6b0f1a!important;
+    background-color: #808f85!important;
+    fill: rgb(255, 255, 255);
+    filter: opacity(1);
+}
+
+.nav-link.active .Nav-Css{
+    color: #dce0d9 !important;
+}
+
+.nav-link:hover{
+    filter: opacity(0.7);
+    background-color: #808f85;
+    fill: rgb(255, 255, 255);
+}
+
+.nav-link:hover .Nav-Css{
+    filter: opacity(1);
+    color: #dce0d9 !important;
+}
+
+.Nav-Css{
+    padding: 5px;
+    display: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+}
+
+.nav-link svg{
+    min-width: 2rem;
+    margin: 0 .5rem 0 1rem;
+    height: 60px;
+    width: 60px;
+}
+
+.logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.2ch;
+    width: 100%;
+    display: flex;
+}
+
+.logo svg{
+    transform: rotate(0deg);
+    width: 30px;
+    transition: .4s ease-in-out;
+    margin-top: 10px;
+}
+
+.nav-pills:hover .logo svg{
+    transform: rotate(-180deg);
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-pills{
+        bottom: 0;
+        margin: 0;
+        width: 100vw;
+        height: 5rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .logo{
+        display: none;
+    }
+    
+    .nav-item{
+        width: 16.67%;
+    }
+
+    .nav-link{
+        justify-content: center;
+    }
+
+    .nav-link svg{
+        margin-bottom: 45px;
+        margin-right: 20px;
+    }
+
+    .nav-pills:hover .Nav-Css{
+        display: none;
+    }
+    
+    .nav-link:hover .Nav-Css{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .nav-pills{
+        width: 8rem;
+        height: 93vh;
+    }
+
+    .nav-pills:hover{
+        width: 16rem;
+    }
+
+    .nav-pills:hover .Nav-Css{
+        display: inline;
+    }
 }

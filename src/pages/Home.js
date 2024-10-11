@@ -1,13 +1,11 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ProfilePicture from '../images/Logo1.png';
 
 import Mission from './homepagecomponents/Mission';
 import About from './homepagecomponents/AboutUs';
+
 
 const Home = () => {
     return (

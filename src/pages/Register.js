@@ -11,9 +11,12 @@ const Register = () => {
     const [RPassword, setRPassword] = useState('');
     const [FName, setFName] = useState('');
     const [LName, setLName] = useState('');
+    const [Address, setAddress] = useState('');
+    const [City, setCity] = useState('');
+    const [Zip, setZip] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Email: ${Email} Password: ${Password} Repeated Password: ${RPassword} First Name: ${FName} Last Name: ${LName}`);
+        alert(`Email: ${Email} Password: ${Password} Repeated Password: ${RPassword} First Name: ${FName} Last Name: ${LName} Address: ${Address} City: ${City} Zip: ${Zip}`);
     }
 
     return (
@@ -68,7 +71,7 @@ const Register = () => {
 
                             <Form.Group as={Col}>
                             <Form.Label id="LoginReviewlabel">Address</Form.Label>
-                            <Form.Control placeholder="1234 Main St" />
+                            <Form.Control placeholder="1234 Main St" value={Address} onChange={(e) => setAddress(e.target.value)}/>
                             </Form.Group>
 
                         </Row>
@@ -78,27 +81,15 @@ const Register = () => {
 
                             <Form.Group as={Col}>
                             <Form.Label id="LoginReviewlabel">City</Form.Label>
-                            <Form.Control />
-                            </Form.Group>
-
-                            <Form.Group as={Col}>
-                            <Form.Label id="LoginReviewlabel">State</Form.Label>
-                            <Form.Select defaultValue="Choose...">
-                                <option>Choose...</option>
-                                <option>...</option>
-                            </Form.Select>
+                            <Form.Control placeholder="Main City" value={City} onChange={(e) => setCity(e.target.value)}/>
                             </Form.Group>
 
                             <Form.Group as={Col}>
                             <Form.Label id="LoginReviewlabel">Zip</Form.Label>
-                            <Form.Control />
+                            <Form.Control placeholder="1234" value={Zip} onChange={(e) => setZip(e.target.value)}/>
                             </Form.Group>
 
                         </Row>
-
-                        <Form.Group className="mb-3">
-                            <Form.Check type="checkbox" label="I'm willing to share my personal information to the hotel or something" />
-                        </Form.Group>
 
                         <Button type="submit" className="btn">Submit</Button>                        
                         
