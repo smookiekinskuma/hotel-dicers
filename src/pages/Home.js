@@ -5,6 +5,9 @@ import ProfilePicture from '../images/Logo1.png';
 
 import Mission from './homepagecomponents/Mission';
 import About from './homepagecomponents/AboutUs';
+import Staff from './homepagecomponents/Staff';
+import RoomImages from './homepagecomponents/RoomImages';
+import VenueImages from './homepagecomponents/EventImages';
 
 
 const Home = () => {
@@ -42,10 +45,10 @@ const Home = () => {
                 <Row xs={1} md={3}>
                     <Col id="Grid-B" xs={{order:0}}><p className='top'><Mission /></p></Col>
                     <Col id="Grid" xs={{ order:1}}><About /></Col>
-                    <Col id="Grid-B" xs={{ order:2}}><p>Staff</p></Col>
-                    <Col id="Grid" xs={{order:3}}><p className="bottom">Room Images</p></Col>
+                    <Col id="Grid-B" xs={{ order:2}}><Staff /></Col>
+                    <Col id="Grid" xs={{order:3}}><RoomImages className="bottom"/></Col>
                     <Col id="Grid-B" xs={{order:4}}><p>Review Showcase</p></Col>
-                    <Col id="Grid" xs={{order:5}}><p>Venue Images</p></Col>
+                    <Col id="Grid" xs={{order:5}}><VenueImages /></Col>
                 </Row>
             </Container>
             <Outlet />
