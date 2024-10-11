@@ -55,12 +55,12 @@ const Event = () => {
 
                     <Form.Group as={Col}>
                     <Form.Label id="label"> Starting Date: </Form.Label>
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}/>
+                    <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
                     </Form.Group>
 
                     <Form.Group as={Col}>
                     <Form.Label id="label"> Ending Date: </Form.Label>
-                    <DatePicker selected={endDate} onChange={(date) => setEndDate(date)}/>
+                    <DatePicker id="date" selected={endDate} onChange={(date) => setEndDate(date)}/>
                     </Form.Group>
 
                     </Row>

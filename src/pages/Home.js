@@ -38,14 +38,14 @@ const Home = () => {
 
             {/*Basic information about the hotel.*/}    
 
-            <Container id='container-home'>
+            <Container id='container-home fluid'>
                 <Row xs={1} md={3}>
-                    <Col id="Grid-B"><Mission /></Col>
-                    <Col id="Grid"><About /></Col>
-                    <Col id="Grid-B"><p>Staff</p></Col>
-                    <Col id="Grid"><p>Room Images</p></Col>
-                    <Col id="Grid-B"><p>Review Showcase</p></Col>
-                    <Col id="Grid"><p>Venue Images</p></Col>
+                    <Col id="Grid-B" xs={{order:0}}><p className='top'><Mission /></p></Col>
+                    <Col id="Grid" xs={{ order:1}}><About /></Col>
+                    <Col id="Grid-B" xs={{ order:2}}><p>Staff</p></Col>
+                    <Col id="Grid" xs={{order:3}}><p className="bottom">Room Images</p></Col>
+                    <Col id="Grid-B" xs={{order:4}}><p>Review Showcase</p></Col>
+                    <Col id="Grid" xs={{order:5}}><p>Venue Images</p></Col>
                 </Row>
             </Container>
             <Outlet />
