@@ -1,4 +1,13 @@
+<<<<<<< Updated upstream
 import DatePicker from 'react-datepicker';
+=======
+import React, { useState, useEffect } from 'react';
+import { Outlet, Link } from 'react-router-dom';
+import { Container, Button, Col, Form, Row } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import DatePicker from "react-datepicker";
+
+>>>>>>> Stashed changes
 import 'react-datepicker/dist/react-datepicker.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -10,8 +19,6 @@ import { motion } from 'framer-motion';
 import '../CSS/Room.css';
 
 import RoomBox from './components/RoomBox';
-
-/*Comment*/
 
 /*Room Booking - Where people will be booking rooms*/
 
