@@ -87,11 +87,11 @@ const Event = () => {
 
                 <h1>Available Venues</h1>
 
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
-                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" GuestNo="100"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" Price="1000"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" Price="1000"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" Price="1000"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" Price="1000"/>
+                <EventBox EventImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Venue" Price="1000"/>
                                 
             </motion.div>
         </>

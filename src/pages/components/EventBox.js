@@ -7,7 +7,7 @@ function EventBox(props){
         <img src={props.EventImage}></img>
         <h3>{props.Name}</h3>
         <p>{props.Description}</p>
-        <p>Maximum number of guests allowed: {props.GuestNo}</p>
+        <h4>Price: {props.Price}</h4>
         <button class="btn">Book!</button>
     </div>
     )

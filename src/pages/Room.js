@@ -1,9 +1,9 @@
-import 'react-datepicker/dist/react-datepicker.css';
-import DatePicker from "react-datepicker";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Container, Button, Col, Form, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 import '../CSS/Room.css';
 
 import RoomBox from './components/RoomBox';
@@ -13,6 +13,16 @@ import RoomBox from './components/RoomBox';
 /*Room Booking - Where people will be booking rooms*/
 
 const Room = () => {
+    const [room, setRoom] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/rooms')  // Connect to backend API
+          .then(response => response.json())
+          .then(data => setRoom(data))
+          .catch(error => console.error('Error fetching Rooms:', error));
+    }, []);
+
+
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [Guests, setGuests] = useState('');
@@ -21,6 +31,8 @@ const Room = () => {
         event.preventDefault();
         alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests} No. of Children: ${Children}`);
     }
+
+
 
     return (
         <> 
@@ -96,13 +108,11 @@ const Room = () => {
                 
 
                 <h1>Available Rooms</h1>
-
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
-                <RoomBox RoomImage="/images/SUBSTITUTE.png" Name="Name" Description="Sample Room" GuestNo="1" BedNo="Standard" BedType="Basic"/>
+                <>
+                    {room.map(room => (
+                        <RoomBox key={room.id} room={room}/>
+                    ))}
+                </>
 
             </motion.div>
         </>
