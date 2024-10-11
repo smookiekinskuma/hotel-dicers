@@ -1,16 +1,16 @@
 import React from 'react';
 import './Boxes.css';
 
-function EventBox(props){
+const VenueBox = ({ venue }) => {
     return (
     <div class = "Box">
-        <img src={props.EventImage}></img>
-        <h3>{props.Name}</h3>
-        <p>{props.Description}</p>
-        <h4>Price: {props.Price}</h4>
+        <img src={venue.venueimage} alt={venue.Name}/>
+        <h3>{venue.Name} || Floor {venue.Floor}</h3>
+        <p>{venue.Description}</p>
+        <h4>Price: {venue.Price}</h4>
         <button class="btn">Book!</button>
     </div>
     )
 }
 
-export default EventBox;
+export default VenueBox;
