@@ -15,7 +15,6 @@ const Register = () => {
     const [City, setCity] = useState('');
     const [Zip, setZip] = useState('');
     const handleSubmit = (event) => {
-        fetch('http://localhost:5000/accounts', {method: 'POST'})
         event.preventDefault();
         alert(`Email: ${Email} Password: ${Password} Repeated Password: ${RPassword} First Name: ${FName} Last Name: ${LName} Address: ${Address} City: ${City} Zip: ${Zip}`);
     }

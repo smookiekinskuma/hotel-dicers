@@ -46,7 +46,6 @@ class Bar extends Component {
                             <li className="active"></li> {/*<-- DO NOT REMOVE --*/}
                             <li><Link to ="/Login" class="a login">Login</Link></li>
                             <li><Link to ="/Register" class="a reg">Register</Link></li>
-                            {/*Separating Admin from the other two*/}
                             <li><Link to ="/Admin" class="a admin">Admin</Link></li>
                         </ul>
                     </div>   
