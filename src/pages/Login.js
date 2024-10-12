@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import AdminCheck from '../component/AdminCheck';
+import LoginCheck from '../component/LoginVerify';
 import "../CSS/LoginRegister.css"
 
 /*Login Page*/
@@ -11,14 +12,8 @@ const Login = () => {
     const [Password, setPassword] = useState('');
     const handleSubmit = (event) => {
         fetch('http://localhost:5000/accounts', {method: 'GET'})
-        if (Email === 'http://localhost:5000/accounts/:Email' && Password === 'http://localhost:5000/accounts/:Password'){
-            AdminCheck();
-            
-        }
-        else{
-            alert('Invalid Username or Password');
-        }
-        event.preventDefault();
+            .then(response => AdminCheck.json())
+            .then(response => LoginCheck.json());
     }
 
     return (

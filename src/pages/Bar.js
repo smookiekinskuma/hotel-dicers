@@ -30,24 +30,24 @@ class Bar extends Component {
     }
     
     render() {
+        fetch('http://localhost:5000/accounts/:fname', {method: 'GET'})
+        const firstName = '../component/LoginVerify/:firstName';
         return (
             <>
                 <div id="nav">
                     <div id="parent-container">    
                         <li class="List-text"><Link to ="/"><img className="profile-photo" src={ProfilePicture} alt="logo"/></Link></li>
                     </div>
-                        {/*
-                        <Link to ="/" class="Logo-text">Hotel Dicers</Link>
-                        */}
 
                     <div id="parent-container">
                         <ul id="Navbar" className={this.state.clicked ? 
                             "#Navbar active" : "#Navbar"}>
                             <li className="active"></li> {/*<-- DO NOT REMOVE --*/}
-                            <li><Link to ="/Login" class="a login">Login</Link></li>
-                            <li><Link to ="/Register" class="a reg">Register</Link></li>
+                            <li><Link to ="/Login" class="a login" id="Login">Login</Link></li>
+                            <li><Link to ="/Register" class="a reg" id="Register">Register</Link></li>
                             {/*Separating Admin from the other two*/}
                             <li><Link to ="/Admin" class="a admin" id = 'Admin' hidden>Admin</Link></li>
+                            <li class="a login" hidden>Welcome Back, {firstName} </li>
                         </ul>
                     </div>   
 
