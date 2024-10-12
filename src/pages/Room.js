@@ -108,11 +108,11 @@ const Room = () => {
                 
 
                 <h1>Available Rooms</h1>
-                <>
+                <div class='center'>
                     {room.map(room => (
                         <RoomBox key={room.id} room={room}/>
                     ))}
-                </>
+                </div>
 
             </motion.div>
         </>

@@ -4,8 +4,8 @@
 
 .Heading-Text .profile-Head{
     display: block;
-    height: 50%;
-    width: 10%;
+    height: 20%;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -34,28 +34,26 @@
     font-weight: 200;
 }
 
+/*Homepage Grids*/
+
 #Grid{
     background-color: #d7b3b7;
     border: 1px solid #31081f;
-    padding: 0 20px;
+    padding: 10px 10px;
+    align-items: center;
+    text-align: center;
 }
 
 #Grid-B{
     background-color: #e4cbce;
     border: 1px solid #31081f;
-    padding: 0 20px;
-}
-.top{
-    padding-bottom: 40px;
-    
-}
-
-.bottom{
-    padding-bottom: 180px;
+    padding: 10px 10px;
+    align-items: center;
+    text-align: center;
 }
 
 .Home-P{
-    padding: 20px;
+    padding: 10px;
     justify-content: center;
 }
 
@@ -66,3 +64,7 @@
     text-align: center;
     margin-top: 30px;
 } 
+
+.desc {
+    font-weight: bold;
+}

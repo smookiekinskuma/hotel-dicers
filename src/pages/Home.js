@@ -5,25 +5,23 @@ import ProfilePicture from '../images/Logo1.png';
 
 import Mission from './homepagecomponents/Mission';
 import About from './homepagecomponents/AboutUs';
-import Staff from './homepagecomponents/Staff';
+import StaffImages from './homepagecomponents/Staff';
 import RoomImages from './homepagecomponents/RoomImages';
 import VenueImages from './homepagecomponents/EventImages';
+import Contact from './homepagecomponents/Contact';
 
 
 const Home = () => {
     return (
         
         <motion.div
-            
             initial={{opacity: 0}}
             animate={{opacity: 1 }}
             exit={{opacity: 0}} 
-        
         >
             <div id="header">
                 <div class="Heading-Text">
                     <img className="profile-Head" src={ProfilePicture} alt="logo"/>
-                    <h1 class="subfont-size">Make the cake, and eat it too.</h1>
                 </div>
                 <Container fluid id="container">
                     <Row>
@@ -35,20 +33,17 @@ const Home = () => {
                 </Container>
 
             </div>
-            <div class="Home-P">
-                <p class="Home-Text">Homepage</p>
-                {/* <Button>Test</Button> */}
-            </div>
+            <div class="Home-P" />
 
-            {/*Basic information about the hotel.*/}    
+            {/*Basic information about the hotel.*/} 
 
             <Container fluid id='container-home'>
                 <Row xs={1} md={3}>
                     <Col id="Grid-B" xs={{order:0}}><p className='top'><Mission /></p></Col>
                     <Col id="Grid" xs={{ order:1}}><About /></Col>
-                    <Col id="Grid-B" xs={{ order:2}}><Staff /></Col>
+                    <Col id="Grid-B" xs={{ order:2}}><Contact /></Col>
                     <Col id="Grid" xs={{order:3}}><RoomImages className="bottom"/></Col>
-                    <Col id="Grid-B" xs={{order:4}}><p>Review Showcase</p></Col>
+                    <Col id="Grid-B" xs={{order:4}}><StaffImages /></Col>
                     <Col id="Grid" xs={{order:5}}><VenueImages /></Col>
                 </Row>
             </Container>

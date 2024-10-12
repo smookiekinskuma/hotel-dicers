@@ -95,12 +95,11 @@ const Event = () => {
                 <Outlet />
 
                 <h1>Available Venues</h1>
-
-                <>
+                <div class='center'>
                     {venue.map(venue => (
                         <VenueBox key={venue.id} venue={venue}/>
                     ))}
-                </>
+                </div>
                                 
             </motion.div>
         </>

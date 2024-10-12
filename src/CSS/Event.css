@@ -72,4 +72,8 @@
         width: 18vh;
     }
 }
+
+.center {
+    align-items: center;
+}
    
