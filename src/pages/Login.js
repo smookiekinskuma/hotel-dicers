@@ -13,7 +13,7 @@ const Login = () => {
         fetch('http://localhost:5000/accounts', {method: 'GET'})
         if (Email === 'http://localhost:5000/accounts/:Email' && Password === 'http://localhost:5000/accounts/:Password'){
             AdminCheck();
-
+            
         }
         else{
             alert('Invalid Username or Password');
