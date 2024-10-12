@@ -42,7 +42,7 @@ const Home = () => {
 
             {/*Basic information about the hotel.*/}    
 
-            <Container id='container-home fluid'>
+            <Container fluid id='container-home'>
                 <Row xs={1} md={3}>
                     <Col id="Grid-B" xs={{order:0}}><p className='top'><Mission /></p></Col>
                     <Col id="Grid" xs={{ order:1}}><About /></Col>
