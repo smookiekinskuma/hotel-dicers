@@ -59,7 +59,7 @@ const Event = () => {
 
                     <Form.Group as={Col}>
                     <Form.Label id="label"> Date: </Form.Label>
-                    <DatePicker id="date" selected={startDate} onChange={(date) => setStartDate(date)}/>
+                    <DatePicker id="date-venue" selected={startDate} onChange={(date) => setStartDate(date)}/>
                     </Form.Group>
 
                     <Form.Group as={Col}>

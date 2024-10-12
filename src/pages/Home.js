@@ -33,6 +33,7 @@ const Home = () => {
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
+
             </div>
             <div class="Home-P">
                 <p class="Home-Text">Homepage</p>

@@ -27,3 +27,46 @@
     border: 2px solid #31081f;
     border-radius:5px;
 }
+
+#date-room{
+    width: 20vh;
+}
+
+@media screen and (max-width:769px) {
+    #Roomform{
+        margin: 20px 5vh;
+        padding: 20px;
+    }
+
+    #date-room{
+        width: 20vh;
+    }
+}
+
+@media screen and (max-width:1024px){
+    form{
+        display: grid;
+        margin: 20px 0px;
+        padding: 50px 50px 120px 50px;
+    }
+
+    #inquiryreviewform{
+        padding: 20px;
+        margin: 0 20px;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .btn-css{
+        margin: 0;
+        position: absolute;
+        right: 36.3%;
+        bottom: 18%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    #date-room{
+        width: 18vh;
+    }
+}

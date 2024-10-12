@@ -63,6 +63,11 @@
         /* padding: 5px; */
         z-index: 999;
     }
+
+    #container{
+        width: 40%;
+        height: 35vh;
+    }
     
     #Navbar{
         /*display: flex;
@@ -94,6 +99,7 @@
         padding: 20px 30px;
         position: relative;
     }
+
     #Navbar li .a{
         margin-bottom: 25px;
         text-decoration: none;
@@ -146,5 +152,12 @@
         color: #dce0d9;
         font-size: 32px;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width:1024px){
+    #container{
+        width: 50%;
+        height: 22vh;
     }
 }

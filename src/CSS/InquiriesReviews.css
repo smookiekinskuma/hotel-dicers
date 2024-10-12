@@ -30,7 +30,7 @@
     padding: 50px;
     margin: 0 50px;
     justify-content: center;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 #label{
@@ -81,6 +81,13 @@
         display: grid;
         margin: 20px 0px;
     }
+
+    #inquiryreviewform{
+        padding: 20px;
+        margin: 0 20px;
+        justify-content: center;
+        border-radius: 10px;
+    }
     
 }
 
@@ -89,6 +96,13 @@
         display: grid;
         margin: 20px 0px;
         padding: 50px 50px 120px 50px;
+    }
+
+    #inquiryreviewform{
+        padding: 20px;
+        margin: 0 20px;
+        justify-content: center;
+        border-radius: 10px;
     }
 
     .btn-css{
