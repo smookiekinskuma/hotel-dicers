@@ -1,4 +1,4 @@
-import { CCarousel, CCarouselItem, CImage,CCarouselCaption } from '@coreui/react'
+import { CCarousel, CCarouselItem, CImage,CCarouselCaption } from '@coreui/react-pro'
 import React from 'react';
 
 function RoomImages(){
