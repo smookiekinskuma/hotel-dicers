@@ -26,7 +26,7 @@ import '../CSS/Navbar.css';
 class Bar extends Component {
     state = { clicked : false };
         handleClick = () => {
-        this.setState({clicked: !this.state.clicked})
+        this.setState({clicked: !this.state.clicked});
     }
     
     render() {
@@ -47,7 +47,7 @@ class Bar extends Component {
                             <li><Link to ="/Login" class="a login">Login</Link></li>
                             <li><Link to ="/Register" class="a reg">Register</Link></li>
                             {/*Separating Admin from the other two*/}
-                            <li><Link to ="/Admin" class="a admin">Admin</Link></li>
+                            <li><Link to ="/Admin" class="a admin" id = 'Admin' hidden>Admin</Link></li>
                         </ul>
                     </div>   
 
