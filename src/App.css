@@ -3,10 +3,6 @@ body{
     background-repeat: repeat-y;
     background-position: center;
     overflow-x: hidden;
-    /*
-    --This is if Image
-    Update: I removed background cover as it gives gaps n all esp at admin page - Divina
-    */
 }
 
 body::-webkit-scrollbar{

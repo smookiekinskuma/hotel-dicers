@@ -3,9 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CRating } from '@coreui/react-pro';
+
 import '@coreui/coreui-pro/dist/css/coreui.min.css'
 import "../CSS/InquiriesReviews.css"
-import ReviewShowcase from './components/ReviewBox';
+
+import ReviewShowcase from './boxcomponents/ReviewBox';
 
 /*Inquiries/Reviews - Where people can submit reviews or inquiries*/
 
@@ -14,10 +16,10 @@ const Inquiries = () => {
     const [review, setReview] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')  // Connect to backend API
-          .then(response => response.json())
-          .then(data => setReview(data))
-          .catch(error => console.error('Error fetching Reviews:', error));
+        fetch('http://localhost:5000/api/reviews')
+            .then(response => response.json())
+            .then(data => setReview(data))
+        .catch(error => console.error('Error fetching room data:', error));      
     }, []);
 
     const [IHelp, IsetHelp] = useState('');
@@ -71,6 +73,7 @@ const Inquiries = () => {
                                     <option value="Complaint">Complaint</option>
                                     <option value="Hiring">Hiring</option>
                                     <option value="Business">Business</option>
+                                    <option value="Others">Others</option>
                                 </Form.Select>
                             </Form.Group>
                             

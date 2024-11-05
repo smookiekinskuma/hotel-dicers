@@ -21,7 +21,7 @@ const Admin = () => {
     const [staff, setStaff] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/staffs')  // Connect to backend API
+        fetch('http://localhost:5000/api/staffs')  // Connect to backend API
           .then(response => response.json())
           .then(data => setStaff(data))
           .catch(error => console.error('Error fetching Staffs:', error));
@@ -30,7 +30,7 @@ const Admin = () => {
     const [account, setAccount] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/accounts')  // Connect to backend API
+        fetch('http://localhost:5000/api/accounts')  // Connect to backend API
           .then(response => response.json())
           .then(data => setAccount(data))
           .catch(error => console.error('Error fetching Accounts:', error));
@@ -39,7 +39,7 @@ const Admin = () => {
     const [review, setReview] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')  // Connect to backend API
+        fetch('http://localhost:5000/api/reviews')  // Connect to backend API
           .then(response => response.json())
           .then(data => setReview(data))
           .catch(error => console.error('Error fetching Reviews:', error));
@@ -48,7 +48,7 @@ const Admin = () => {
     const [inquiry, setInquiry] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/inquiries')  // Connect to backend API
+        fetch('http://localhost:5000/api/inquiries')  // Connect to backend API
           .then(response => response.json())
           .then(data => setInquiry(data))
           .catch(error => console.error('Error fetching Inquiries:', error));
@@ -57,7 +57,7 @@ const Admin = () => {
     const [venuebook, setVenuebook] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/venuebooks')  // Connect to backend API
+        fetch('http://localhost:5000/api/venuebooks')  // Connect to backend API
           .then(response => response.json())
           .then(data => setVenuebook(data))
           .catch(error => console.error('Error fetching Venue Booking Logs:', error));
@@ -66,7 +66,7 @@ const Admin = () => {
     const [roombook, setRoombook] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/roombooks')  // Connect to backend API
+        fetch('http://localhost:5000/api/roombooks')  // Connect to backend API
           .then(response => response.json())
           .then(data => setRoombook(data))
           .catch(error => console.error('Error fetching Room Booking Logs:', error));

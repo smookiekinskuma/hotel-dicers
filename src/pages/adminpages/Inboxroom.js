@@ -1,5 +1,5 @@
 import React from 'react';
-import '../components/Boxes.css';
+import '../boxcomponents/Boxes.css';
 
 import { CRating } from '@coreui/react-pro';
 import '@coreui/coreui-pro/dist/css/coreui.min.css'

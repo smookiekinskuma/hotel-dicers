@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import '../components/Boxes.css';
+import '../boxcomponents/Boxes.css';
 
 const Roombook = ({ roombook }) => {
     return (
@@ -12,7 +12,8 @@ const Roombook = ({ roombook }) => {
                 <h4>Email: {roombook.email}</h4>
             </Col>
             <Col>
-                <h4>{roombook.Name} || {roombook.Room}</h4>
+                <h4>{roombook.Name}</h4>
+                <h4>Room: {roombook.Room}</h4>
                 <h4>{roombook.start} to {roombook.end}</h4>
                 <h4>Total Price: {roombook.TotalPrice}</h4>
             </Col>

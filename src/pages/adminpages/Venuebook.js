@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import '../components/Boxes.css';
+import '../boxcomponents/Boxes.css';
 
 const Venuebook = ({ venuebook }) => {
     return (
@@ -14,7 +14,7 @@ const Venuebook = ({ venuebook }) => {
             <Col>
                 <h4>{venuebook.Name}</h4>
                 <h4>Date: {venuebook.Date}</h4>
-                <h4>Time: {venuebook.starttime} to {venuebook.endtime}</h4>
+                <h4>Time: {venuebook.starttime}:00 to {venuebook.endtime}:00</h4>
                 <h4>Total Price: {venuebook.TotalPrice}</h4>
             </Col>
         </Row>

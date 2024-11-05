@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import '../components/Boxes.css';
+import '../boxcomponents/Boxes.css';
 
 const Staffbook = ({ staff }) => {
     return (

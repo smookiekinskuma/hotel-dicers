@@ -1,5 +1,5 @@
 import { BrowserRouter, Outlet } from 'react-router-dom';
-import AnimatedRoutes from './component/AnimatedRoutes';
+import AnimatedRoutes from './AnimatedRoutes';
 import './App.css';
 import './CSS/Home.css';
 

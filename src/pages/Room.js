@@ -3,10 +3,11 @@ import { Outlet, Link } from 'react-router-dom';
 import { Container, Button, Col, Form, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import DatePicker from "react-datepicker";
+
 import 'react-datepicker/dist/react-datepicker.css';
 import '../CSS/Room.css';
 
-import RoomBox from './components/RoomBox';
+import RoomBox from './boxcomponents/RoomBox';
 
 /*Comment*/
 
@@ -16,12 +17,11 @@ const Room = () => {
     const [room, setRoom] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rooms')  // Connect to backend API
-          .then(response => response.json())
-          .then(data => setRoom(data))
-          .catch(error => console.error('Error fetching Rooms:', error));
+        fetch('http://localhost:5000/api/rooms')
+            .then(response => response.json())
+            .then(data => setRoom(data))
+        .catch(error => console.error('Error fetching room data:', error));      
     }, []);
-
 
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
@@ -60,6 +60,7 @@ const Room = () => {
                 <div> {/*Form to book events*/}
 
                     <form id="Roomform" onSubmit={handleSubmit}>
+
                         {/*Full Name*/}
                         <Row className="mb-3">
 
@@ -110,7 +111,7 @@ const Room = () => {
                 <h1>Available Rooms</h1>
                 <div class='center'>
                     {room.map(room => (
-                        <RoomBox key={room.id} room={room}/>
+                        <RoomBox key={room._id} room={room}/>
                     ))}
                 </div>
 

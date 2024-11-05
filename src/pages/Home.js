@@ -7,7 +7,7 @@ import Mission from './homepagecomponents/Mission';
 import About from './homepagecomponents/AboutUs';
 import StaffImages from './homepagecomponents/Staff';
 import RoomImages from './homepagecomponents/RoomImages';
-import VenueImages from './homepagecomponents/EventImages';
+import VenueImages from './homepagecomponents/VenueImages';
 import Contact from './homepagecomponents/Contact';
 
 
@@ -33,7 +33,7 @@ const Home = () => {
                 </Container>
 
             </div>
-            <div class="Home-P" />
+
 
             {/*Basic information about the hotel.*/} 
 
