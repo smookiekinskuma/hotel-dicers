@@ -49,7 +49,6 @@
 
 /*Contains Home, Room, Events & inquiries*/
 #container{
-    width: 80%;
     background-color: #dce0d9;
     border-radius: 5px;
     padding: 10px 5px 10px 5px;
@@ -65,8 +64,7 @@
     }
 
     #container{
-        width: 40%;
-        height: 35vh;
+        height: 10vh;
     }
     
     #Navbar{
@@ -157,7 +155,6 @@
 
 @media screen and (max-width:1024px){
     #container{
-        width: 50%;
-        height: 22vh;
+        height: 6.7vh;
     }
 }
