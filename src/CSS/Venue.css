@@ -43,10 +43,6 @@
     border-radius:5px;
 }
 
-#date-venue{
-    
-}
-
 @media screen and (max-width:769px) {
     .font-venue{
         font-size: 2em;

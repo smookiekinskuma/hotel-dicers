@@ -81,20 +81,21 @@ const Room = () => {
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Number of Guests: </Form.Label>
                         <Form.Select aria-label="Default select example" value={Guests} onChange={(e) => setGuests(e.target.value)}>
-                            <option value="1 Guest">1 Guest</option>
-                            <option value="2 Guests">2 Guests</option>
-                            <option value="3 Guests">3 Guests</option>
-                            <option value="4 Guests">4 Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
                         </Form.Select>
                         </Form.Group>
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Number of Children: </Form.Label>
                         <Form.Select aria-label="Default select example" value={Children} onChange={(e) => setChildren(e.target.value)}>
-                            <option value="1 Children">1 Children</option>
-                            <option value="2 Children">2 Children</option>
-                            <option value="3 Children">3 Children</option>
-                            <option value="4 Children">4 Children</option>
+                            <option value="0">None</option>
+                            <option value="1">1 Children</option>
+                            <option value="2">2 Children</option>
+                            <option value="3">3 Children</option>
+                            <option value="4">4 Children</option>
                         </Form.Select>
                         </Form.Group>
 

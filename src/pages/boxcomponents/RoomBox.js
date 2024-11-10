@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Boxes.css';
 
@@ -11,7 +12,9 @@ const RoomBox = ({ room }) => {
         <p>{room.BedNo} {room.BedType}</p>
         <h4>Price: {room.Price} || Per night: {room.PerNight}</h4>
 
-        <button class="btn">Book this Room</button>
+        <div id="ButtonSpace">
+        <Link className="Button" to ="/Room/RoomBooking">Book this Room</Link>
+        </div>
     </div>
     )
 }
