@@ -1,0 +1,47 @@
+#Longimg {
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 150px;
+    box-sizing: border-box; 
+    border: 5px solid #595859; 
+}
+#LongBox {
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 1%;
+    display: inline-block;
+    background-color: #dce0d9;
+    box-sizing: border-box; 
+    border: 20px solid #dce0d9; 
+    flex-wrap: wrap;
+}
+.Text-CSS{
+    font-weight: 600;
+    letter-spacing: 0.08ch;
+}
+
+@media only screen and (max-width: 600px){
+    #Longimg{
+        width: 100px;
+    }
+    .Text{
+        margin-left: 35px;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    #Longimg{
+        width: 140px;
+    }
+    .Text{
+        margin-top: 20px;
+        margin-left: 70px;
+    }
+    .Text-CSS{
+        font-size: 24px;
+    }
+    #LongBox{
+        width: 65vh;
+    }
+}
