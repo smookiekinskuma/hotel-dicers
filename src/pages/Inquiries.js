@@ -3,6 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CRating } from '@coreui/react-pro';
+<<<<<<< Updated upstream
+=======
+import axios from 'axios';
+
+>>>>>>> Stashed changes
 import '@coreui/coreui-pro/dist/css/coreui.min.css'
 import "../CSS/InquiriesReviews.css"
 import ReviewShowcase from './components/ReviewBox';
@@ -28,13 +33,22 @@ const Inquiries = () => {
         alert(`INQUIRY: Help: ${IHelp} & Title: ${ITitle} & Description: ${IDesc}`);
     }
 
-    const [Rrate, RsetRate] = useState(3)
+    const [Rrate, RsetRate] = useState(0)
     const [RTitle, RsetTitle] = useState('');
     const [RDesc, RsetDesc] = useState('');
-    const reviewSubmit = (event) => {
-        event.preventDefault();
-        alert(`REVIEW: Rate: ${Rrate} Title: ${RTitle} & Description: ${RDesc}`);
-    }
+    const reviewSubmit = async () => {
+        try {
+            const response = await
+        axios.post('http://localhost:5000/api/reviews', {
+            Review: {Rrate},
+            Title: {RTitle},
+            Description: {RDesc},
+        });
+        console.log(response.data);
+        } catch(error){
+            console.error(error);
+        }
+    };
 
     return (
         <>
