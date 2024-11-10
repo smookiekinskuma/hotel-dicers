@@ -176,7 +176,18 @@ label{
         display: grid;
         margin: 20px 0px;
     }
-    
+
+    .Home.active{
+        font-size: 1em;
+    }
+
+    .Home:hover{
+        font-size: 1em;
+    }
+
+    .Home{
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width:1024px){
@@ -193,6 +204,21 @@ label{
         bottom: 18%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+    }
+
+    .Home.active{
+        font-size: 1.4em;
+    }
+
+    .Home:hover{
+        background-color: #31081f;
+        color: #dce0d9;
+        padding-top: 10px;
+        font-size: 1.4em;
+    }
+
+    .Home{
+        font-size: 1.4em;
     }
 }
    

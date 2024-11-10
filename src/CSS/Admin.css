@@ -23,13 +23,13 @@
 
 
 #AdminNavBar{
-    height: 93vh;
+    height: 100%;
+    position: sticky;
+    top: 0;
 }
-    
 
 .nav-pills{
     background-color: #dce0d9;
-    position: fixed;
     transition: 200ms ease;
 }
 
