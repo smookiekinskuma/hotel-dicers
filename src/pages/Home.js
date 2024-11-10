@@ -19,21 +19,20 @@ const Home = () => {
             animate={{opacity: 1 }}
             exit={{opacity: 0}} 
         >
-            <div id="header">
+            <div id="header-Home">
                 <div class="Heading-Text">
                     <img className="profile-Head" src={ProfilePicture} alt="logo"/>
                 </div>
-                <Container fluid id="container">
-                    <Row>
-                        <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home active">Home</p></Link></Col>
-                        <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
-                        <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
-                    </Row>
-                </Container>
-
             </div>
 
+            <Container fluid id="container">
+                <Row>
+                    <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home active">Home</p></Link></Col>
+                    <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
+                    <Col xs={{ order: 'third' }}><Link to ="/Venue" class="Text"><p class="Home">Venue</p></Link></Col>
+                    <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
+                </Row>
+            </Container>
 
             {/*Basic information about the hotel.*/} 
 

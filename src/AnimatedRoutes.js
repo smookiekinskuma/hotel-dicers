@@ -5,7 +5,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Room from './pages/Room';
+import RoomBooking from "./pages/bookingpages/RoomBooking";
 import Venue from './pages/Venue';
+import VenueBooking from "./pages/bookingpages/VenueBooking";
 import Inquiries from './pages/Inquiries';
 import Admin from './pages/Admin';
 import Guestbook from './pages/adminpages/Guestbook';
@@ -14,6 +16,7 @@ import Venuebook from './pages/adminpages/Venuebook';
 import Staffbook from './pages/adminpages/Staffbook';
 import Formbook from './pages/adminpages/Formbook';
 import Inboxbook from './pages/adminpages/Inboxroom';
+import NotFound from "./pages/NotFound";
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -27,7 +30,9 @@ function AnimatedRoutes() {
                     <Route path="/"element={<Bar />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/Room" element={<Room />} />
-                        <Route path="/Event" element={<Venue />} />        
+                            <Route path="/Room/RoomBooking" element={<RoomBooking />} />
+                        <Route path="/Venue" element={<Venue />} />    
+                            <Route path="/Venue/VenueBooking" element={<VenueBooking />} />
                         <Route path="/Inquiries" element={<Inquiries />} />
                         <Route path="/Login" element={<Login />} />
                         <Route path="/Register" element={<Register />} />
@@ -39,6 +44,7 @@ function AnimatedRoutes() {
                             <Route path="/Admin/Form" element={<Formbook />} />
                             <Route path="/Admin/Inbox" element={<Inboxbook />} />
                         </Route>
+                        <Route path="*" element={<NotFound />} />
                     </Route>
                 </Route>
             </Routes>

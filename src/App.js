@@ -7,7 +7,7 @@ import './CSS/Home.css';
 function App() {
   
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/HotelDicers">
       <AnimatedRoutes /> {/* <--Seperated For Motion application */}
       <Outlet/>
     </BrowserRouter>

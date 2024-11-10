@@ -1,11 +1,22 @@
+#header-inquiry{
+    background-image: url(/public/images/Reception.png);
+    background-position: center;
+    align-items: center;
+    text-align: center;
+    padding: 1px 0px 1px 0px;
+}
+
 .font-inquiry{
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 90%;
     font-size: 5em;
     font-weight: 900;
     padding-bottom: 40px;
-}
-
-#header-inquiry{
-    padding: 20px 0 30px 0;
+    text-shadow: 0px 0px 10px #31081f;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
 }
 
 /*Grids at the Inquiries/Reviews. Shoutout to https://cssgridgenerator.io/*/
@@ -15,6 +26,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 8px;
+    margin: 2% 10vh;
 }
     
 .div3 {

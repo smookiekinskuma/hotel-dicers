@@ -48,17 +48,18 @@ const Inquiries = () => {
 
                 <div id="header-inquiry">
                 <h1 class="font-inquiry">Inquiries & Reviews</h1>
+                </div>
+
 
                 <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
                     <Row>
                         <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
                         <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home">Room</p></Link></Col>
-                        <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Venue" class="Text"><p class="Home">Venue</p></Link></Col>
                         <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home active">Inquiries</p></Link></Col>
                     </Row>
                 </Container>
-                </div>
-
+                
                         <div class="parent">
                             <div class="div1">
                             <h1>INQUIRIES</h1>

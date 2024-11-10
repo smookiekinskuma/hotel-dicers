@@ -27,9 +27,10 @@ const Room = () => {
     const [endDate, setEndDate] = useState(null);
     const [Guests, setGuests] = useState('');
     const [Children, setChildren] = useState('');
+    const [RoomDesc, setRoomDesc] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests} No. of Children: ${Children}`);
+        alert(`Start Date: ${startDate} End Date: ${endDate} No. of Guests: ${Guests} No. of Children: ${Children} Description: ${RoomDesc}`);
     }
 
 
@@ -45,32 +46,30 @@ const Room = () => {
             >
                 <div id="header-room">{/*Id for parent*/}
                     <h1 class="font-room">Room Booking</h1>
-
-                    <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
-                        <Row>
-                            <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
-                            <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home active">Room</p></Link></Col>
-                            <Col xs={{ order: 'third' }}><Link to ="/Event" class="Text"><p class="Home">Venue</p></Link></Col>
-                            <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
-                        </Row>
-                    </Container>
                 </div>
-                
 
-                <div> {/*Form to book events*/}
+                <Container fluid id="container"> {/*Bar to access Home, Room, Event, and Inquiry*/}
+                    <Row>
+                        <Col xs={{ order: 'first'}}><Link to ="/" class="Text"><p class="Home">Home</p></Link></Col>
+                        <Col xs={{ order: 'second'}}><Link to ="/Room" class="Text"><p class="Home active">Room</p></Link></Col>
+                        <Col xs={{ order: 'third' }}><Link to ="/Venue" class="Text"><p class="Home">Venue</p></Link></Col>
+                        <Col xs={{ order: 'last' }}><Link to ="/Inquiries" class="Text"><p class="Home">Inquiries</p></Link></Col>
+                    </Row>
+                </Container>
 
                     <form id="Roomform" onSubmit={handleSubmit}>
+                        <h1 class="FormTitle">Client Details</h1>
 
                         {/*Full Name*/}
                         <Row className="mb-3">
 
                         <Form.Group as={Col}>
-                        <Form.Label id="label"> Starting Date: </Form.Label>
+                        <Form.Label id="label"> Check-In: </Form.Label>
                         <DatePicker id="date-room" selected={startDate} onChange={(date) => setStartDate(date)}/>
                         </Form.Group>
 
                         <Form.Group as={Col}>
-                        <Form.Label id="label"> Ending Date: </Form.Label>
+                        <Form.Label id="label"> Check-Out: </Form.Label>
                         <DatePicker id="date-room" selected={endDate} onChange={(date) => setEndDate(date)}/>
                         </Form.Group>
 
@@ -100,11 +99,21 @@ const Room = () => {
                         </Form.Group>
 
                         </Row>
-                        
+
+                        <Row className="mb-3">
+
+                        <Form.Group as={Col}>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                <Form.Label id="label">Additional Details:</Form.Label>
+                                <Form.Control as="textarea" rows={1} value={RoomDesc} onChange={(e) => setRoomDesc(e.target.value)} />
+                        </Form.Group>
+                        </Form.Group>
+
+                        </Row>
+
                         <Button type="submit" class="btn">Search for Available Rooms</Button>
                     </form>
 
-                </div>
                 <Outlet />
                 
 
