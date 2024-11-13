@@ -22,20 +22,26 @@ const Inquiries = () => {
         .catch(error => console.error('Error fetching room data:', error));      
     }, []);
 
+    //Inquiries
+    const [IName, IsetName] = useState('');
+    const [IEmail, IsetEmail] = useState('');
     const [IHelp, IsetHelp] = useState('');
     const [ITitle, IsetTitle] = useState('');
     const [IDesc, IsetDesc] = useState('');
     const inquirySubmit = (event) => {
         event.preventDefault();
-        alert(`INQUIRY: Help: ${IHelp} & Title: ${ITitle} & Description: ${IDesc}`);
+        alert(`INQUIRY: ${IName} ${IEmail} || Help: ${IHelp} & Title: ${ITitle} & Description: ${IDesc}`);
     }
 
+    //Reviews
+    const [RName, RsetName] = useState('');
+    const [REmail, RsetEmail] = useState('');
     const [Rrate, RsetRate] = useState(3)
     const [RTitle, RsetTitle] = useState('');
     const [RDesc, RsetDesc] = useState('');
     const reviewSubmit = (event) => {
         event.preventDefault();
-        alert(`REVIEW: Rate: ${Rrate} Title: ${RTitle} & Description: ${RDesc}`);
+        alert(`REVIEW: ${RName} ${REmail} Rate: ${Rrate} Title: ${RTitle} & Description: ${RDesc}`);
     }
 
     return (
@@ -65,6 +71,21 @@ const Inquiries = () => {
                             <h1>INQUIRIES</h1>
 
                             <form id="inquiryreviewform" onSubmit={inquirySubmit}> {/*Form to make an Inquiry*/}
+
+                            <Row>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label id="label"> Name: </Form.Label>
+                                    <Form.Control type="text" placeholder="Name or Nickname" value={IName} onChange={(e) => IsetName(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label id="label"> Email: </Form.Label>
+                                    <Form.Control type="email" placeholder="email@email.com" value={IEmail} onChange={(e) => IsetEmail(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label id="label"> What do you want to inquire about?: </Form.Label>
@@ -97,6 +118,21 @@ const Inquiries = () => {
 
                             <form id="inquiryreviewform" onSubmit={reviewSubmit}> {/*Form to make an Inquiry*/}
 
+                            <Row>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label id="label"> Name: </Form.Label>
+                                    <Form.Control type="text" placeholder="Name or Nickname" value={RName} onChange={(e) => RsetName(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label id="label"> Email: </Form.Label>
+                                    <Form.Control type="email" placeholder="email@email.com" value={REmail} onChange={(e) => RsetEmail(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
                             <div className="d-flex align-items-center">
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Rating:</Form.Label>
@@ -120,8 +156,8 @@ const Inquiries = () => {
 
                             <div class="div3">
                                 <h1>Hotel Reviews</h1>
-                                {review.map((reviewMember, index) => (
-                                    <ReviewShowcase key={index} review={reviewMember}/>
+                                {review.map(review => (
+                                    <ReviewShowcase key={review._id} review={review}/>
                                 ))}
                             </div>
                         </div>
