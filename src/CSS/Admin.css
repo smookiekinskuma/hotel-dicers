@@ -23,9 +23,9 @@
 
 
 #AdminNavBar{
-    height: 100%;
-    position: sticky;
-    top: 0;
+    height: 93vh;
+    z-index: 999 !important;
+    position: static; top: 0;
 }
 
 .nav-pills{
@@ -120,6 +120,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+    #AdminNavBar{
+        height: 10vh;
+    }
     .nav-pills{
         bottom: 0;
         margin: 0;
