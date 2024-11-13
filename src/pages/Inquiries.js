@@ -30,7 +30,41 @@ const Inquiries = () => {
     const [IDesc, IsetDesc] = useState('');
     const inquirySubmit = (event) => {
         event.preventDefault();
-        alert(`INQUIRY: ${IName} ${IEmail} || Help: ${IHelp} & Title: ${ITitle} & Description: ${IDesc}`);
+
+        const inquiryData = {
+            fullname: IName,
+            email: IEmail,
+            inquire: IHelp,
+            Title: ITitle,
+            Description: IDesc
+        };
+
+        fetch('http://localhost:5000/api/inquiries/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(inquiryData)
+        })
+        .then (response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then (data => {
+            alert('Inquiry submitted successfully!');
+        // Optionally, reset the form fields
+            IsetName('');
+            IsetEmail('');
+            IsetHelp('');
+            IsetTitle('');
+            IsetDesc('');
+        })
+        .catch(error => {
+            console.error('Error submitting inquiry:', error);
+            alert('There was a problem submitting your inquiry. Please try again later.');
+        })
     }
 
     //Reviews
@@ -41,7 +75,41 @@ const Inquiries = () => {
     const [RDesc, RsetDesc] = useState('');
     const reviewSubmit = (event) => {
         event.preventDefault();
-        alert(`REVIEW: ${RName} ${REmail} Rate: ${Rrate} Title: ${RTitle} & Description: ${RDesc}`);
+
+        const reviewData = {
+            fullName: RName,
+            email: REmail,
+            Rating: Rrate,
+            Title: RTitle,
+            Description: RDesc
+        };
+
+        fetch('http://localhost:5000/api/reviews/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reviewData)
+        })
+        .then (response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then (data => {
+            alert('Review submitted successfully!');
+        // Optionally, reset the form fields
+            RsetName('');
+            RsetEmail('');
+            RsetRate('');
+            RsetTitle('');
+            RsetDesc('');
+        })
+        .catch(error => {
+            console.error('Error submitting review:', error);
+            alert('There was a problem submitting your review. Please try again later.');
+        })
     }
 
     return (
@@ -148,7 +216,7 @@ const Inquiries = () => {
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Description</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} />
-                            </Form.Group>
+                            </Form.Group>s
 
                             <Button type="submit" classname="btn">Submit</Button>
                             </form>
