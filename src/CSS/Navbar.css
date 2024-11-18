@@ -50,8 +50,7 @@
 /*Contains Home, Room, Events & inquiries*/
 #container{
     background-color: #dce0d9;
-    border-radius: 5px;
-    padding: 10px 5px 10px 5px;
+    padding: 0 10px 10px 0;
     height: 70px;
 }
 
