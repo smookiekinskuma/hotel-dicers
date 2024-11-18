@@ -8,16 +8,54 @@ import "../CSS/LoginRegister.css"
 const Register = () => {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
-    const [RPassword, setRPassword] = useState('');
     const [FName, setFName] = useState('');
     const [LName, setLName] = useState('');
     const [Address, setAddress] = useState('');
     const [City, setCity] = useState('');
     const [Zip, setZip] = useState('');
-    const handleSubmit = (event) => {
-        fetch('http://localhost:5000/accounts', {method: 'POST'})
+    const registerSubmit = (event) => {
         event.preventDefault();
-        alert(`Email: ${Email} Password: ${Password} Repeated Password: ${RPassword} First Name: ${FName} Last Name: ${LName} Address: ${Address} City: ${City} Zip: ${Zip}`);
+        
+        const registerData = {
+            email: Email,
+            password: Password,
+            fName: FName,
+            lName: LName,
+            address: Address,
+            city: City,
+            zip: Zip,
+            Role: "Guest"
+        };
+        console.log('Register Data:', registerData);
+
+        fetch('http://localhost:5000/api/accounts/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(registerData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Account Created!');
+            // Reset form fields
+            setEmail('');
+            setPassword('');
+            setFName('');
+            setLName('');
+            setAddress('');
+            setCity('');
+            setZip('');
+        })
+        .catch(error => {
+            console.error('Error submitting registration:', error);
+            alert('There was a problem submitting your registration. Please try again later.');
+        });
     }
 
     return (
@@ -30,7 +68,7 @@ const Register = () => {
                 <h1>Register</h1>
 
                 <>
-                    <form id="LoginReviewform" onSubmit={handleSubmit}> {/*Form for registering*/}
+                    <form id="LoginReviewform" onSubmit={registerSubmit}> {/*Form for registering*/}
 
                         {/*Account*/}
                         <Row className="mb-3">
@@ -45,11 +83,6 @@ const Register = () => {
                             <Form.Control type="password" placeholder="Password" value={Password} onChange={(e) => setPassword(e.target.value)}/>
                             </Form.Group>
 
-                            <Form.Group as={Col}>
-                            <Form.Label id="LoginReviewlabel"> Repeat Password: </Form.Label>
-                            <Form.Control type="password" placeholder="Repeat Password" value={RPassword} onChange={(e) => setRPassword(e.target.value)}/>
-                            </Form.Group>
-
                         </Row>
 
                         {/*Full Name*/}
@@ -57,12 +90,12 @@ const Register = () => {
 
                             <Form.Group as={Col}>
                             <Form.Label id="LoginReviewlabel"> First Name: </Form.Label>
-                            <Form.Control placeholder="First Name" onChange={(e) => setFName(e.target.value)}/>
+                            <Form.Control placeholder="First Name" value={FName} onChange={(e) => setFName(e.target.value)}/>
                             </Form.Group>
 
                             <Form.Group as={Col}>
                             <Form.Label id="LoginReviewlabel"> Last Name: </Form.Label>
-                            <Form.Control placeholder="Last Name" onChange={(e) => setLName(e.target.value)}/>
+                            <Form.Control placeholder="Last Name" value={LName} onChange={(e) => setLName(e.target.value)}/>
                             </Form.Group>
 
                         </Row>

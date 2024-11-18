@@ -15,6 +15,8 @@ const Guestbook = ({ account }) => {
             <Col>
                 <h4>Address: {account.address} {account.city}</h4>
                 <h4>ZIP: {account.zip}</h4>
+                <h4>Role: {account.Role}</h4>
+                <h4>Date Created: {account.datecreated}</h4>
             </Col>
         </Row>
         </Container>
