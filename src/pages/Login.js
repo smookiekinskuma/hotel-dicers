@@ -11,9 +11,41 @@ const Login = () => {
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
     const handleSubmit = (event) => {
+<<<<<<< Updated upstream
         fetch('http://localhost:5000/accounts', {method: 'GET'})
             .then(response => AdminCheck.json())
             .then(response => LoginCheck.json());
+=======
+        event.preventDefault();
+
+        const loginData = {
+            email: Email,
+            password: Password,
+        }
+
+        console.log(`Login Data: `, loginData);
+
+        fetch('http://localhost:5000/api/accounts/login', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('Login Success!');
+        })
+        .catch(error => {
+            console.error('Error Logging In:', error);
+            alert('There was a problem logging in. Please try again later.');
+        });
+>>>>>>> Stashed changes
     }
 
     return (
