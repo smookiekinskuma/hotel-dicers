@@ -1,3 +1,35 @@
+@media only screen and (max-width: 600px) {
+    /*admin*/
+    .nav-item{
+        width: 16.67%;
+    }
+
+    .nav-link{
+        justify-content: center;
+    }
+
+    .nav-pills:hover .Nav-Css{
+        display: none;
+    }
+    
+    .nav-link:hover .Nav-Css{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /*admin*/
+    .nav-pills{
+        width: 12%!important;
+        flex-direction: row;
+    }
+    .nav-pills:hover{
+        width: 18%!important;
+        flex-direction: row;
+    }
+}
+
+
 @media screen and (max-width:769px) {
     /* */
     /*Room*/
@@ -7,6 +39,17 @@
     }
     #date-room{
         width: 20vh;
+    }
+    /*Inquiry*/
+    form{
+        display: grid;
+        margin: 20px 0px;
+    }
+
+    #inquiryreviewform{
+        margin: 0 20px;
+        justify-content: center;
+        border-radius: 10px;
     }
 }
 
@@ -36,5 +79,28 @@
 
     #date-room{
         width: 18vh;
+    }
+    /*Inquiry*/
+    
+    form{
+        display: grid;
+        margin: 20px 0px;
+        padding: 50px 50px 120px 50px;
+    }
+
+    #inquiryreviewform{
+        padding: 10px;
+        margin: 0 20px;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .btn-css{
+        margin: 0;
+        position: absolute;
+        right: 36.3%;
+        bottom: 18%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     }
 }

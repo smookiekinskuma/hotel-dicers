@@ -4,6 +4,7 @@
     width: 150px;
     box-sizing: border-box; 
     border: 5px solid #595859; 
+    background-color: #e8ebe5;
 }
 #LongBox {
     border-radius: 25px;

@@ -1,9 +1,9 @@
 #Adminbody{
     background-image: url(/public/images/AdminWallpaper.png);
-    background-repeat: repeat-y;
+    background-repeat: repeat;
     background-position: center;
     margin: 0;
-    padding: 0;
+    padding-bottom: 10%;
 }
 
 #AdminH1{
@@ -21,16 +21,18 @@
     font-weight: bolder !important;
 }
 
-
-#AdminNavBar{
-    height: 93vh;
-    z-index: 999 !important;
-    position: static; top: 0;
-}
-
 .nav-pills{
     background-color: #dce0d9;
     transition: 200ms ease;
+    height: 95vh!important;
+    z-index: 1 !important;
+    position: fixed !important;
+    width: 6.45%!important;
+}
+
+.nav-pills:hover
+{
+    width: 12%!important;
 }
 
 .nav-pills:hover .Nav-Css{
@@ -115,60 +117,10 @@
     margin-top: 10px;
 }
 
+.nav-pills:hover .logo{
+    margin-left: 17.54%;
+}
+
 .nav-pills:hover .logo svg{
     transform: rotate(-180deg);
-}
-
-@media only screen and (max-width: 600px) {
-    #AdminNavBar{
-        height: 10vh;
-    }
-    .nav-pills{
-        bottom: 0;
-        margin: 0;
-        width: 100vw;
-        height: 5rem;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .logo{
-        display: none;
-    }
-    
-    .nav-item{
-        width: 16.67%;
-    }
-
-    .nav-link{
-        justify-content: center;
-    }
-
-    .nav-link svg{
-        margin-bottom: 45px;
-        margin-right: 20px;
-    }
-
-    .nav-pills:hover .Nav-Css{
-        display: none;
-    }
-    
-    .nav-link:hover .Nav-Css{
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 600px) {
-    .nav-pills{
-        width: 8rem;
-        height: 93vh;
-    }
-
-    .nav-pills:hover{
-        width: 16rem;
-    }
-
-    .nav-pills:hover .Nav-Css{
-        display: inline;
-    }
 }
