@@ -1,7 +1,9 @@
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ProfilePicture from '../images/Logo1.png';
+import { useAuth } from '../context/AuthContext';
 
 import Mission from './homepagecomponents/Mission';
 import About from './homepagecomponents/AboutUs';
@@ -12,6 +14,11 @@ import Contact from './homepagecomponents/Contact';
 
 
 const Home = () => {
+    const { user } = useAuth();
+
+    // Log the user object to the console for debugging
+    console.log('User  :', user);
+
     return (
         
         <motion.div
@@ -35,6 +42,13 @@ const Home = () => {
             </Container>
 
             {/*Basic information about the hotel.*/} 
+            <div id="GreetingCard">
+                <h1 id="greeting">Welcome to Hotel Dicers!</h1>
+                {/* Render the greeting only if the user is logged in */}
+                {user && <h2 id="greeting_two">Hello, {user.fName} {user.lName}!</h2>}
+                {/* Optionally, you can include a message for guests */}
+                {!user && <h2 id="greeting_two">Hello, Guest!</h2>}
+            </div>
 
             <Container fluid id='container-home'>
                 <Row xs={1} md={3}>

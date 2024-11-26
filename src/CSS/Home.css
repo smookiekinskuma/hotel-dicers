@@ -40,6 +40,19 @@
     margin-top: 20px;
 }
 
+/*Greeting*/
+#GreetingCard {
+    text-align: center;
+}
+
+#greeting {
+    padding-top: 1%;
+}
+
+#greeting_two {
+    color: #dce0d9;
+}
+
 /*Homepage Grids*/
 
 #Grid{

@@ -16,50 +16,65 @@
 // --------------------------------------------------------------------------
 // End of Information
 
-import { Component } from 'react';
+import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import ProfilePicture from '../images/Logo2.png';
 import '../CSS/Navbar.css';
+import { useAuth } from '../context/AuthContext'; // Import useAuth
 
 //The Top Bar
+const Bar = () => {
+    const [clicked, setClicked] = useState(false);
+    const { user, logout } = useAuth(); // Get user from context
 
-class Bar extends Component {
-    state = { clicked : false };
-        handleClick = () => {
-        this.setState({clicked: !this.state.clicked})
-    }
-    
-    render() {
-        return (
-            <>
-                <div id="nav">
-                    <div id="parent-container">    
-                        <li class="List-text"><Link to ="/"><img className="profile-photo" src={ProfilePicture} alt="logo"/></Link></li>
-                    </div>
-                        {/*
-                        <Link to ="/" class="Logo-text">Hotel Dicers</Link>
-                        */}
+    console.log('User :', user);
 
-                    <div id="parent-container">
-                        <ul id="Navbar" className={this.state.clicked ? 
-                            "#Navbar active" : "#Navbar"}>
-                            <li className="active"></li> {/*<-- DO NOT REMOVE --*/}
-                            <li><Link to ="/Login" class="a login">Login</Link></li>
-                            <li><Link to ="/Register" class="a reg">Register</Link></li>
-                            {/*Separating Admin from the other two*/}
-                            <li><Link to ="/Admin" class="a admin">Admin</Link></li>
-                        </ul>
-                    </div>   
+    const handleClick = () => {
+        setClicked(!clicked);
+    };
 
-                    <div id="Hamburger" onClick={this.handleClick}> {/*Hamburger Bar that shows Login, Register, and Admin*/}
-                        <i id="Hambar" className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                    </div>
+    const handleLogout = () => {
+        logout(); // Call the logout function
+    };
+
+    return (
+        <>
+            <div id="nav">
+                <div id="parent-container">    
+                    <li className="List-text"><Link to="/"><img className="profile-photo" src={ProfilePicture} alt="logo"/></Link></li>
                 </div>
-                <Outlet />
-            </>
-        )
-    }
-    
-}
+
+                <div id="parent-container">
+                    <ul id="Navbar" className={clicked ? "#Navbar active" : "#Navbar"}>
+                        <li className="active"></li>
+
+                        {/* Show login and register links only if the user is not logged in */}
+                        {!user && (
+                            <>
+                                <li><Link to="/Login" className="a">Login</Link></li>
+                                <li><Link to="/Register" className="a">Register</Link></li>
+                            </>
+                        )}
+
+                        {/* Only show Admin link if user role is Admin */}
+                        {user && user.role === "Admin" && (
+                            <li><Link to="/Admin" className="a admin">Admin</Link></li>
+                        )}
+
+                        {/* Show Logout button if user is logged in */}
+                        {user && (
+                            <li><Link to="/" onClick={handleLogout} className="a logout">Logout</Link></li>
+                        )}
+                    </ul>
+                </div>   
+
+                <div id="Hamburger" onClick={handleClick}>
+                    <i id="Hambar" className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
+                </div>
+            </div>
+            <Outlet />
+        </>
+    );
+};
 
 export default Bar;

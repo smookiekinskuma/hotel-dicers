@@ -216,7 +216,7 @@ const Inquiries = () => {
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Description</Form.Label>
                                 <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} />
-                            </Form.Group>s
+                            </Form.Group>
 
                             <Button type="submit" classname="btn">Submit</Button>
                             </form>

@@ -112,7 +112,6 @@ const Room = () => {
 
                         </Row>
 
-                        <Button type="submit" class="btn">Search for Available Rooms</Button>
                     </form>
 
                 <Outlet />
