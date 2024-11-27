@@ -13,7 +13,8 @@ const RoomBooking = () => {
         return <Navigate to="/Room" />;
     }
 
-    const { room, startDate, endDate, numberOfGuests, numberOfChildren, roomDesc, user, roomPrice, perNightPrice } = location.state;
+    const { room, startDate, endDate, numberOfGuests, numberOfChildren, AddDetails, user, roomPrice, perNightPrice } = location.state;
+    console.log('AddDetails:', AddDetails);
 
     // Calculate total price
     const totalNights = () => {
@@ -36,11 +37,14 @@ const RoomBooking = () => {
             AccountId: user._id, // Assuming user._id is the account ID
             start: new Date(startDate),
             end: new Date(endDate),
+            totalNightsCountOverall: totalNightsCountOverall,
             NoGuests: numberOfGuests,
             NoKids: numberOfChildren,
-            AddDetails: roomDesc,
+            AddDetails: AddDetails,
             TotalPrice: totalPrice
         };
+
+        console.log('Booking Data:', bookingData);
 
         try {
             const response = await fetch('http://localhost:5000/api/roombooks/add', {
@@ -88,7 +92,7 @@ const RoomBooking = () => {
                 <p><b>Check-In:</b> {startDate ? startDate.toLocaleDateString() : 'Not specified'} <b>||</b> <b>Check-Out:</b> {endDate ? endDate.toLocaleDateString() : 'Not specified'}</p>
                 <p><b>Number of days total:</b> {totalNightsCountOverall} days</p>
                 <p><b>Number of Guests:</b> {numberOfGuests || 'Not specified'} <b>||</b> <b>Number of Children:</b> {numberOfChildren || '0'}</p>
-                <p><b>Additional Details:</b> {roomDesc || 'No details added.'}</p>
+                <p><b>Additional Details:</b> {AddDetails || 'No details added.'}</p>
                 
                 <div id='centerDiv'>
                 <h3><b>Total Price</b></h3>

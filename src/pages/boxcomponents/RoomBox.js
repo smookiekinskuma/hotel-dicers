@@ -2,10 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import './Boxes.css';
 
-const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, roomDesc, user }) => {
+const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, AddDetails, user }) => {
     const navigate = useNavigate();
 
     const handleBooking = () => {
+        console.log('AddDetails before navigating:', AddDetails);
         navigate('/Room/RoomBooking', {
             state: { 
                 room, 
@@ -13,7 +14,7 @@ const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, r
                 endDate, 
                 numberOfGuests,
                 numberOfChildren,
-                roomDesc,
+                AddDetails,
                 user,
                 //to calculate the price
                 roomPrice: room.Price, 

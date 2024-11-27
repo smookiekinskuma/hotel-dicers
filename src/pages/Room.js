@@ -20,7 +20,7 @@ const Room = () => {
     const [endDate, setEndDate] = useState(null);
     const [numberOfGuests, setNumberOfGuests] = useState(1);
     const [numberOfChildren, setNumberOfChildren] = useState(0);
-    const [roomDesc, setRoomDesc] = useState('');
+    const [AddDetails, setAddDetails] = useState('');
     const { user } = useAuth();
 
     useEffect(() => {
@@ -29,6 +29,10 @@ const Room = () => {
             .then(data => setRooms(data))
             .catch(error => console.error('Error fetching room data:', error));
     }, []);
+
+    const totalGuests = Number(numberOfGuests) + Number(numberOfChildren);
+
+    const availableRooms = rooms.filter(room => room.GuestCap >= totalGuests);
 
     return (
         <> 
@@ -101,7 +105,7 @@ const Room = () => {
                         <Form.Group as={Col}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Additional Details:</Form.Label>
-                                <Form.Control as="textarea" rows={1} value={roomDesc} onChange={(e) => setRoomDesc(e.target.value)} />
+                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} />
                         </Form.Group>
                         </Form.Group>
 
@@ -113,19 +117,25 @@ const Room = () => {
                 
 
                 <h1>Available Rooms</h1>
+                
                 <div class='center'>
-                    {rooms.map(room => (
-                        <RoomBox 
-                            key={room._id} 
-                            room={room} 
-                            startDate={startDate} 
-                            endDate={endDate} 
-                            numberOfGuests={numberOfGuests} 
-                            numberOfChildren={numberOfChildren} 
-                            roomDesc={roomDesc} 
-                            user={user} // Pass user info as well
-                        />
-                    ))}
+                {availableRooms.length > 0 ? (
+                        availableRooms.map(room => (
+                            <RoomBox 
+                                    room={room} 
+                                    startDate={startDate} 
+                                    endDate={endDate} 
+                                    numberOfGuests={numberOfGuests} 
+                                    numberOfChildren={numberOfChildren} 
+                                    AddDetails={AddDetails} 
+                                    user={user} 
+                                />
+                        ))
+                    ) : (
+                        <div className="center-flex">
+                            <h2>No rooms are available for the selected number of guests and children.</h2>
+                        </div>
+                    )}
                 </div>
 
             </motion.div>
