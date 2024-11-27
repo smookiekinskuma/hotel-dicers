@@ -5,35 +5,35 @@ import './Booking.css';
 const RoomBooking = () => {
     const location = useLocation();
     console.log('Location State:', location.state);
-    
 
-    // Check if location.state is null
+    //Check if location.state is null
     if (!location.state) {
-        // Redirect to the Room page if no state is found
+        //Redirect to the Room page if no state is found
         return <Navigate to="/Room" />;
     }
 
     const { room, startDate, endDate, numberOfGuests, numberOfChildren, AddDetails, user, roomPrice, perNightPrice } = location.state;
 
-    // Calculate total price
+    //Calculate total price
     const totalNights = () => {
         if (startDate && endDate) {
             const start = new Date(startDate);
             const end = new Date(endDate);
             const differenceInTime = end.getTime() - start.getTime();
-            return Math.ceil(differenceInTime / (1000 * 3600 * 24)); // Round up to the nearest whole day
+            return Math.ceil(differenceInTime / (1000 * 3600 * 24));
         }
-        return 0; // Return 0 if dates are not specified
+        return 0; //Return 0 if dates are not specified
     };
 
+    //Calculating stuff n all
     const totalNightsCount = totalNights();
-    const totalPrice = roomPrice + (totalNightsCount * perNightPrice); // Assuming roomPrice is per night
-    const totalNightsCountOverall = (totalNightsCount + 1); //For the overall counting
+    const totalPrice = roomPrice + (totalNightsCount * perNightPrice);
+    const totalNightsCountOverall = (totalNightsCount + 1);
 
     const handleConfirm = async () => {
         const bookingData = {
-            RoomId: room._id, // Assuming room._id is the room ID
-            AccountId: user._id, // Assuming user._id is the account ID
+            RoomId: room._id,
+            AccountId: user._id,
             start: new Date(startDate),
             end: new Date(endDate),
             totalNightsCountOverall: totalNightsCountOverall,
@@ -57,7 +57,7 @@ const RoomBooking = () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Booking successful:', data);
-                // Optionally, redirect to a confirmation page or show a success message
+                //Optionally, redirect to a confirmation page or show a success message
             } else {
                 const errorData = await response.json();
                 console.error('Error booking room:', errorData);

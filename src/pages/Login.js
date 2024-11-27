@@ -27,47 +27,47 @@ const Login = () => {
         e.preventDefault();
         setError('');
         setSuccess('');
-    
+
         const { email, password } = loginData;
-    
+
         // Basic validation
         if (!email || !password) {
-          setError('Please enter all fields');
-          return;
+            setError('Please enter all fields');
+            return;
         }
-    
-        try {
-          const res = await fetch('http://localhost:5000/api/accounts/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-          });
-    
-          const data = await res.json();
-          console.log('Login response:', data);
-    
-          if (res.ok) {
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('userFName', data.fName); // Store first name
-            localStorage.setItem('userLName', data.lName); // Store last name
-            localStorage.setItem('userEmail', data.email); // Store email
-            localStorage.setItem('userRole', data.role); // Store email
-            localStorage.setItem('userId', data._id); // Store email
 
-            setSuccess('Login successful! Redirecting...');
-            setTimeout(() => {
-            navigate('/'); // Redirect to homepage
-            window.location.reload();
-            }, 2000);
-          } else {
-            setError(data.msg || 'Login failed. Please try again.');
-          }
+        try {
+            const res = await fetch('http://localhost:5000/api/accounts/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('userFName', data.fName);
+                localStorage.setItem('userLName', data.lName);
+                localStorage.setItem('userEmail', data.email);
+                localStorage.setItem('userRole', data.role);
+                localStorage.setItem('userId', data._id);
+
+                setSuccess('Login successful! Redirecting...');
+                setTimeout(() => {
+                    navigate('/'); // Redirect to homepage
+                    window.location.reload();
+                }, 2000);
+            } else {
+                setError(data.msg || 'Login failed. Please try again.');
+            }
         } catch (err) {
-          setError('An error occurred. Please try again.');
+            console.error('Error during login:', err);
+            setError('An error occurred. Please try again.');
         }
-      };
+    };
 
     return (
         <html>
@@ -79,8 +79,12 @@ const Login = () => {
                 >
 
                     <h1>Login</h1>
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
-                    {success && <p style={{ color: 'green' }}>{success}</p>}
+                    
+                    {error && 
+                    <div id="Status"><h4 id="StatusText" style={{ color: '#31081f' }}>{error}</h4></div>}
+                    {success && 
+                    <div id="Status"><h4 id="StatusText" style={{ color: 'green' }}>{success}</h4></div>}
+                    
 
                         <Form id="LoginReviewform" onSubmit={loginSubmit} className="Log-Form"> {/*Form for logging in*/}
 
@@ -123,3 +127,6 @@ const Login = () => {
 }
 
 export default Login;
+
+//I died inside troubleshooting this one.
+// - Nicaia

@@ -16,7 +16,7 @@ const Guestbook = ({ account }) => {
                 <h4>Address: {account.address} {account.city}</h4>
                 <h4>ZIP: {account.zip}</h4>
                 <h4>Role: {account.Role}</h4>
-                <h4>Date Created: {account.datecreated}</h4>
+                <h4>Date Created: {new Date(account.DateCreated).toLocaleDateString()}</h4>
             </Col>
         </Row>
         </Container>

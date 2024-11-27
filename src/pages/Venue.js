@@ -77,7 +77,7 @@ const Event = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Date: </Form.Label>
-                        <DatePicker id="date-venue" selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="yyyy/MM/dd"/>
+                        <DatePicker id="date-venue" selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="yyyy/MM/dd" required/>
                         </Form.Group>
 
                         </Row>
@@ -87,7 +87,7 @@ const Event = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Starting Time: </Form.Label>
-                        <Form.Select aria-label="Default select example" value={startTime} onChange={(e) => setstartTime(e.target.value)}>
+                        <Form.Select aria-label="Default select example" value={startTime} onChange={(e) => setstartTime(e.target.value)} required>
                             <option value="1">01:00</option>
                             <option value="2">02:00</option>
                             <option value="3">03:00</option>
@@ -117,7 +117,7 @@ const Event = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Ending Time: </Form.Label>
-                        <Form.Select aria-label="Default select example" value={endTime} onChange={(e) => setendTime(e.target.value)}>
+                        <Form.Select aria-label="Default select example" value={endTime} onChange={(e) => setendTime(e.target.value)} required>
                             <option value="1">01:00</option>
                             <option value="2">02:00</option>
                             <option value="3">03:00</option>
@@ -151,7 +151,7 @@ const Event = () => {
                             
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Type of Event: </Form.Label>
-                        <Form.Select aria-label="Default select example" value={Event} onChange={(e) => setEvent(e.target.value)}>
+                        <Form.Select aria-label="Default select example" value={Event} onChange={(e) => setEvent(e.target.value)} required>
                             <option value="Party">Party</option>
                             <option value="Meeting">Meeting</option>
                             <option value="Wedding">Wedding</option>
@@ -162,7 +162,7 @@ const Event = () => {
                         <Form.Group as={Col}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Additional Details:</Form.Label>
-                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} />
+                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} required/>
                         </Form.Group>
                         </Form.Group>
 

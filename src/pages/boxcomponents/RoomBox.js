@@ -31,11 +31,15 @@ const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, A
             <p>{room.BedNo} {room.BedType}</p>
             <h4>Price: ${room.Price} || Per night: ${room.PerNight}</h4>
 
-            <div id="ButtonSpace">
-                <button className="Button" onClick={handleBooking}>
-                    Book this Room
-                </button>
-            </div>
+            {user ? (
+                <div id="ButtonSpace">
+                    <button className="Button" onClick={handleBooking}>
+                        Book this Room
+                    </button>
+                </div>
+            ) : (
+                <p>Please log in to book this room.</p>
+            )}
         </div>
     );
 };

@@ -10,6 +10,7 @@ const Register = () => {
     const [registerData, setRegisterData] = useState({
         email: '',
         password: '',
+        Rpassword: '',
         fName: '',
         lName: '',
         address: '',
@@ -34,10 +35,16 @@ const Register = () => {
         setError('');
         setSuccess('');
 
-        const { email, password, fName, lName, address, city, zip, Role } = registerData;
+        const { email, password, Rpassword, fName, lName, address, city, zip, Role } = registerData;
+
+        //Repeating password
+        if (password !== Rpassword) {
+            setError('Password and Repeat Password do not match');
+            return;
+        }
 
         // Validation
-        if (!email || !password || !fName || !lName || !address || !city || !zip) {
+        if (!email || !password || !Rpassword || !fName || !lName || !address || !city || !zip) {
             setError('Please fill in all fields');
             return;
         }
@@ -81,8 +88,10 @@ const Register = () => {
                 exit={{opacity: 0}}
             >
                 <h1>Register</h1>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-                {success && <p style={{ color: 'green' }}>{success}</p>}
+                {error && 
+                <div id="Status"><h4 id="StatusText" style={{ color: '#31081f' }}>{error}</h4></div>}
+                {success && 
+                <div id="Status"><h4 id="StatusText" style={{ color: 'green' }}>{success}</h4></div>}
 
                 <>
                     <form id="LoginReviewform" onSubmit={registerSubmit}> {/*Form for registering*/}
@@ -109,6 +118,18 @@ const Register = () => {
                                 placeholder="Password" 
                                 name="password"
                                 value={registerData.password} 
+                                onChange={registerChange} 
+                                required
+                            />
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                            <Form.Label id="LoginReviewlabel"> Repeat Password: </Form.Label>
+                            <Form.Control 
+                                type="password" 
+                                placeholder="Password" 
+                                name="Rpassword"
+                                value={registerData.Rpassword} 
                                 onChange={registerChange} 
                                 required
                             />
@@ -197,3 +218,6 @@ const Register = () => {
 }
 
 export default Register;
+
+//I also died inside here.
+// - Nicaia

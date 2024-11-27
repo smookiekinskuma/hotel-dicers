@@ -20,19 +20,19 @@ import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import ProfilePicture from '../images/Logo2.png';
 import '../CSS/Navbar.css';
-import { useAuth } from '../context/AuthContext'; // Import useAuth
+import { useAuth } from '../context/AuthContext';
 
 //The Top Bar
 const Bar = () => {
     const [clicked, setClicked] = useState(false);
-    const { user, logout } = useAuth(); // Get user from context
+    const { user, logout } = useAuth(); //Get user from context
     
     const handleClick = () => {
         setClicked(!clicked);
     };
 
     const handleLogout = () => {
-        logout(); // Call the logout function
+        logout();
     };
 
     return (

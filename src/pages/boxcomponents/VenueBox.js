@@ -27,11 +27,16 @@ const VenueBox = ({ venue, date, startTime, endTime, event, addDetails, user }) 
         <p>{venue.Description}</p>
         <h4>Price: ${venue.Price} || Per hour: ${venue.PerHour}</h4>
 
-        <div id="ButtonSpace">
-                <button className="Button" onClick={handleBooking}>
-                    Book this Venue
-                </button>
-            </div>
+
+        {user ? (
+                <div id="ButtonSpace">
+                    <button className="Button" onClick={handleBooking}>
+                        Book this Venue
+                    </button>
+                </div>
+            ) : (
+                <p>Please log in to book this venue.</p>
+            )}
     </div>
     )
 }

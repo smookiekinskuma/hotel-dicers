@@ -64,12 +64,12 @@ const Room = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Check-In: </Form.Label>
-                        <DatePicker id="date-room" selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="yyyy/MM/dd"/>
+                        <DatePicker id="date-room" selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="yyyy/MM/dd" required/>
                         </Form.Group>
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Check-Out: </Form.Label>
-                        <DatePicker id="date-room" selected={endDate} onChange={(date) => setEndDate(date)} dateFormat="yyyy/MM/dd"/>
+                        <DatePicker id="date-room" selected={endDate} onChange={(date) => setEndDate(date)} dateFormat="yyyy/MM/dd" required/>
                         </Form.Group>
 
                         </Row>
@@ -79,7 +79,7 @@ const Room = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Number of Guests: </Form.Label>
-                        <Form.Select aria-label="Default select example" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)}>
+                        <Form.Select aria-label="Default select example" value={numberOfGuests} onChange={(e) => setNumberOfGuests(e.target.value)} required>
                             <option value="1">1 Guest</option>
                             <option value="2">2 Guests</option>
                             <option value="3">3 Guests</option>
@@ -89,7 +89,7 @@ const Room = () => {
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Number of Children: </Form.Label>
-                        <Form.Select aria-label="Default select example" value={numberOfChildren} onChange={(e) => setNumberOfChildren(e.target.value)}>
+                        <Form.Select aria-label="Default select example" value={numberOfChildren} onChange={(e) => setNumberOfChildren(e.target.value)} required>
                             <option value="0">None</option>
                             <option value="1">1 Children</option>
                             <option value="2">2 Children</option>
@@ -105,7 +105,7 @@ const Room = () => {
                         <Form.Group as={Col}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Additional Details:</Form.Label>
-                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} />
+                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} required/>
                         </Form.Group>
                         </Form.Group>
 

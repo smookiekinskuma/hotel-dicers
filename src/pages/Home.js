@@ -16,7 +16,7 @@ import Contact from './homepagecomponents/Contact';
 const Home = () => {
     const { user } = useAuth();
 
-    // Log the user object to the console for debugging
+    //Log the user object to the console for debugging
     console.log('User  :', user);
 
     return (
@@ -44,7 +44,7 @@ const Home = () => {
             {/*Basic information about the hotel.*/} 
             <div id="GreetingCard">
                 <h1 id="greeting">Welcome to Hotel Dicers!</h1>
-                {/* Render the greeting only if the user is logged in */}
+                {/*Render the greeting only if the user is logged in*/}
                 {user && <h2 id="greeting_two">Hello, {user.fName} {user.lName}!</h2>}
                 {/* Optionally, you can include a message for guests */}
                 {!user && <h2 id="greeting_two">Hello, Guest!</h2>}

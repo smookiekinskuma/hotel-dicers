@@ -144,20 +144,20 @@ const Inquiries = () => {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label id="label"> Name: </Form.Label>
-                                    <Form.Control type="text" placeholder="Name or Nickname" value={IName} onChange={(e) => IsetName(e.target.value)} />
+                                    <Form.Control type="text" placeholder="Name or Nickname" value={IName} onChange={(e) => IsetName(e.target.value)} required/>
                                     </Form.Group>
                                 </Col>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label id="label"> Email: </Form.Label>
-                                    <Form.Control type="email" placeholder="email@email.com" value={IEmail} onChange={(e) => IsetEmail(e.target.value)} />
+                                    <Form.Control type="email" placeholder="email@email.com" value={IEmail} onChange={(e) => IsetEmail(e.target.value)} required/>
                                     </Form.Group>
                                 </Col>
                             </Row>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label id="label"> What do you want to inquire about?: </Form.Label>
-                                <Form.Select aria-label="Default select example" value={IHelp} onChange={(e) => IsetHelp(e.target.value)}>
+                                <Form.Select aria-label="Default select example" value={IHelp} onChange={(e) => IsetHelp(e.target.value)} required>
                                     <option value="About Our Service">About Our Service</option>
                                     <option value="Help & Assistance">Help & Assistance</option>
                                     <option value="Complaint">Complaint</option>
@@ -169,12 +169,12 @@ const Inquiries = () => {
                             
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label id="label"> Title: </Form.Label>
-                                <Form.Control type="text" placeholder="Title" value={ITitle} onChange={(e) => IsetTitle(e.target.value)} />
+                                <Form.Control type="text" placeholder="Title" value={ITitle} onChange={(e) => IsetTitle(e.target.value)} required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Description</Form.Label>
-                                <Form.Control as="textarea" rows={3} value={IDesc} onChange={(e) => IsetDesc(e.target.value)} />
+                                <Form.Control as="textarea" rows={3} value={IDesc} onChange={(e) => IsetDesc(e.target.value)} required/>
                             </Form.Group>
 
                             <Button type="submit" class="btn">Submit</Button>
@@ -190,13 +190,13 @@ const Inquiries = () => {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label id="label"> Name: </Form.Label>
-                                    <Form.Control type="text" placeholder="Name or Nickname" value={RName} onChange={(e) => RsetName(e.target.value)} />
+                                    <Form.Control type="text" placeholder="Name or Nickname" value={RName} onChange={(e) => RsetName(e.target.value)} required/>
                                     </Form.Group>
                                 </Col>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                     <Form.Label id="label"> Email: </Form.Label>
-                                    <Form.Control type="email" placeholder="email@email.com" value={REmail} onChange={(e) => RsetEmail(e.target.value)} />
+                                    <Form.Control type="email" placeholder="email@email.com" value={REmail} onChange={(e) => RsetEmail(e.target.value)} required/>
                                     </Form.Group>
                                 </Col>
                             </Row>
@@ -204,18 +204,18 @@ const Inquiries = () => {
                             <div className="d-flex align-items-center">
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Rating:</Form.Label>
-                                <CRating size='lg' onChange={(value) => RsetRate(value)} value={Rrate} />
+                                <CRating size='lg' onChange={(value) => RsetRate(value)} value={Rrate} required/>
                                 </Form.Group>
                             </div>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label id="label"> Title: </Form.Label>
-                                <Form.Control type="text" placeholder="Title" value={RTitle} onChange={(e) => RsetTitle(e.target.value)} />
+                                <Form.Control type="text" placeholder="Title" value={RTitle} onChange={(e) => RsetTitle(e.target.value)} required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Description</Form.Label>
-                                <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} />
+                                <Form.Control as="textarea" rows={3} value={RDesc} onChange={(e) => RsetDesc(e.target.value)} required/>
                             </Form.Group>
 
                             <Button type="submit" classname="btn">Submit</Button>

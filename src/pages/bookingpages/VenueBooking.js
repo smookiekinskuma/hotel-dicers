@@ -6,9 +6,9 @@ const VenueBooking = () => {
     const location = useLocation();
     console.log('Location State:', location.state);
 
-    // Check if location.state is null
+    //Check if location.state is null
     if (!location.state) {
-        // Redirect to the Room page if no state is found
+        //Redirect to the Room page if no state is found
         return <Navigate to="/Venue" />;
     }
 
@@ -18,9 +18,8 @@ const VenueBooking = () => {
         const startHour = parseInt(start, 10);
         const endHour = parseInt(end, 10);
 
-        // Handle cases where endTime is less than startTime (e.g., crossing midnight)
+        //Handle cases where endTime is less than startTime (e.g., crossing midnight)
         if (endHour < startHour) {
-            // If end time is less than start time, assume it goes to the next day
             return (24 - startHour) + endHour;
         }
         return endHour - startHour;
@@ -32,8 +31,8 @@ const VenueBooking = () => {
 
     const handleConfirm = async () => {
         const bookingData = {
-            VenueId: venue._id, // Assuming room._id is the room ID
-            AccountId: user._id, // Assuming user._id is the account ID
+            VenueId: venue._id,
+            AccountId: user._id,
             Date: new Date(date),
             starttime: startTime,
             endtime: endTime,
@@ -57,7 +56,6 @@ const VenueBooking = () => {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Booking successful:', data);
-                // Optionally, redirect to a confirmation page or show a success message
             } else {
                 const errorData = await response.json();
                 console.error('Error booking room:', errorData);
