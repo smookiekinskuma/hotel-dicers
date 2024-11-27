@@ -1,4 +1,7 @@
+
+/*adaptable Screen*/
 @media only screen and (max-width: 600px) {
+    
     /*admin*/
     .nav-item{
         width: 16.67%;
@@ -31,7 +34,102 @@
 
 
 @media screen and (max-width:769px) {
-    /* */
+    /*Navbar*/
+    /*incase some columns need to get adjusted*/
+    #parent-container{
+        /* padding: 5px; */
+        z-index: 999;
+    }
+
+    #container{
+        height: 10vh;
+    }
+    
+    #Navbar{
+        /*display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;*/
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 30px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background: #6b0f1a;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
+        padding: 40px 0 0 10px;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #Navbar.active{
+        right: 0px;
+        position: fixed;
+    }
+    
+    #Navbar li{
+        list-style: none;
+        padding: 20px 30px;
+        position: relative;
+    }
+
+    #Navbar li .a{
+        margin-bottom: 25px;
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #dce0d9;
+        font-family: Typemonster;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #Navbar li .a:hover{
+        display: grid;
+        height: 80px;
+        width: 300px;
+        color: #31081f;
+        font-size: 2rem;
+        font-weight: 900;
+        font-style: italic;
+        background-color: #e4cbce;
+        min-width: 100%;
+        border-radius: 10px;/*corner-Rounding, for Hover in Nav*/
+    }
+    
+    #Navbar li .a.login:hover{
+        padding: 20px 150px;
+    }
+    
+    #Navbar li .a.reg:hover{
+        padding: 20px 100px;
+    }
+    
+    #Navbar li .a.admin:hover{
+        padding: 20px 140px;
+    }
+    
+    #Navbar li .a:hover::after{
+        content: " ";
+        width: 30%;
+        height: 2px;
+        background: #31081f;
+        bottom: -4px;
+        left: 80px;
+    }
+    
+    #Hamburger {
+        display: block;
+    }
+    
+    #Hamburger i{
+        color: #dce0d9;
+        font-size: 32px;
+        cursor: pointer;
+    }
+    
     /*Room*/
     #Roomform{
         margin: 20px 5vh;
@@ -51,9 +149,31 @@
         justify-content: center;
         border-radius: 10px;
     }
+    /*Venue*/
+    .font-venue{
+        font-size: 2em;
+        padding-bottom: 30px;
+    }
+    
+    #header-venue{
+        padding: 20px 0 30px 0;
+    }
+    
+    #Venueform{
+        margin: 5vh;
+        padding: 20px;
+    }
+
+    #date-venue{
+        width: 18vh;
+    }
 }
 
 @media screen and (max-width:1024px){
+    /*Navbar*/
+    #container{
+        height: 6.7vh;
+    }
     /*Room*/
     form{
         display: grid;
@@ -102,5 +222,31 @@
         bottom: 18%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
+    }
+    /*LoginRegister*/
+    #LoginReviewform{
+        margin: 0 30px;
+        padding: 30px;
+    }
+    #LoginReviewlabel{
+        font-size: 1em;
+    }
+    /*Venue*/
+    .font-venue{
+        font-size: 4em;
+        padding-bottom: 30px;
+    }
+    
+    #header-venue{
+        padding: 20px 0 10px 0;
+    }
+    
+    #Venueform{
+        margin: 14vh;
+        padding: 10px;
+    }
+
+    #date-venue{
+        width: 18vh;
     }
 }
