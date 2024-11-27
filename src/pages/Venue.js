@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { Container, Button, Col, Form, Row } from 'react-bootstrap';
+import { Container, Col, Form, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { useAuth } from '../context/AuthContext'
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,6 +16,21 @@ import VenueBox from './boxcomponents/VenueBox'
 
 const Event = () => {
     const [venue, setVenue] = useState([]);
+    const [startDate, setStartDate] = useState(null);
+    const [startTime, setstartTime] = useState(null);
+    const [endTime, setendTime] = useState(null);
+    const [Event, setEvent] = useState('');
+    const [AddDetails, setAddDetails] = useState('');
+    const { user } = useAuth();
+
+    const eventVenueMap = {
+        Party: (venueName) => venueName.includes('Banquet') || venueName.includes('Garden'),
+        Meeting: (venueName) => venueName.includes('Meeting') || venueName.includes('Auditorium'),
+        Wedding: (venueName) => venueName.includes('Banquet') || venueName.includes('Garden'),
+        Debut: (venueName) => venueName.includes('Banquet') || venueName.includes('Garden'),
+    };
+
+    const [filteredVenues, setFilteredVenues] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/api/venues')
@@ -23,18 +39,14 @@ const Event = () => {
         .catch(error => console.error('Error fetching room data:', error));      
     }, []);
 
-
-    const [startDate, setStartDate] = useState(null);
-    const [startTime, setstartTime] = useState(null);
-    const [endTime, setendTime] = useState(null);
-    const [Event, setEvent] = useState('');
-    const [EventDesc, setEventDesc] = useState('');
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert(`Start Date: ${startDate} Type of Event: ${Event} Start: ${startTime}:00 End: ${endTime}:00 Description: ${EventDesc}`);
-    }
-
-
+    useEffect(() => {
+        if (Event) {
+            const suitableVenues = venue.filter(v => eventVenueMap[Event](v.Name));
+            setFilteredVenues(suitableVenues);
+        } else {
+            setFilteredVenues(venue);
+        }
+    }, [Event, venue]);
 
     return (
         <>
@@ -57,15 +69,15 @@ const Event = () => {
                 </Container>
                 
 
-                    <form id="Venueform" onSubmit={handleSubmit}>
-                        <h1 class="FormTitle">Client Details</h1>
+                    <form id="Venueform" onSubmit={(e) => {e.preventDefault(); }}>
+                        <h1 class="FormTitle">Booking Details</h1>
 
                         {/*Full Name*/}
                         <Row className="mb-3">
 
                         <Form.Group as={Col}>
                         <Form.Label id="label"> Date: </Form.Label>
-                        <DatePicker id="date-venue" selected={startDate} onChange={(date) => setStartDate(date)}/>
+                        <DatePicker id="date-venue" selected={startDate} onChange={(date) => setStartDate(date)} dateFormat="yyyy/MM/dd"/>
                         </Form.Group>
 
                         </Row>
@@ -150,7 +162,7 @@ const Event = () => {
                         <Form.Group as={Col}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label id="label">Additional Details:</Form.Label>
-                                <Form.Control as="textarea" rows={1} value={EventDesc} onChange={(e) => setEventDesc(e.target.value)} />
+                                <Form.Control as="textarea" rows={1} value={AddDetails} onChange={(e) => setAddDetails(e.target.value)} />
                         </Form.Group>
                         </Form.Group>
 
@@ -161,10 +173,25 @@ const Event = () => {
                 <Outlet />
 
                 <h1>Available Venues</h1>
-                <div class='center'>
-                    {venue.map(venue => (
-                        <VenueBox key={venue.id} venue={venue}/>
-                    ))}
+                <div className='center'>
+                    {filteredVenues.length > 0 ? (
+                        filteredVenues.map(venue => (
+                            <VenueBox 
+                                key={venue._id} // Ensure to add a unique key
+                                venue={venue}
+                                date={startDate}
+                                startTime={startTime} // Ensure this is passed correctly
+                                endTime={endTime}
+                                event={Event}
+                                addDetails={AddDetails}
+                                user={user}
+                            />
+                        ))
+                    ) : (
+                        <div className="center-flex">
+                            <h2>No venues are available for the selected event type.</h2>
+                        </div>
+                    )}
                 </div>
                                 
             </motion.div>

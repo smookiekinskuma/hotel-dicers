@@ -14,7 +14,6 @@ const RoomBooking = () => {
     }
 
     const { room, startDate, endDate, numberOfGuests, numberOfChildren, AddDetails, user, roomPrice, perNightPrice } = location.state;
-    console.log('AddDetails:', AddDetails);
 
     // Calculate total price
     const totalNights = () => {
@@ -82,7 +81,7 @@ const RoomBooking = () => {
                 <h3><b>Room Details</b></h3>
                 </div>
                 <p><b>Room Name:</b> {room.Name} <b>||</b> {room.Room}</p>
-                <p><b>Price:</b> {room.Price} <b>||</b> <b>Per Night:</b> {room.PerNight}</p>
+                <p><b>Price:</b> ${room.Price} <b>||</b> <b>Per Night:</b> ${room.PerNight}</p>
                 
                 <div id='centerDiv'>
                 <h3><b>Client Details</b></h3>

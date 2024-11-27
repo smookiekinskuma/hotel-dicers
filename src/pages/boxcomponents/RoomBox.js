@@ -6,7 +6,6 @@ const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, A
     const navigate = useNavigate();
 
     const handleBooking = () => {
-        console.log('AddDetails before navigating:', AddDetails);
         navigate('/Room/RoomBooking', {
             state: { 
                 room, 
@@ -30,7 +29,7 @@ const RoomBox = ({ room, startDate, endDate, numberOfGuests, numberOfChildren, A
             <p>{room.Description}</p>
             <p>Maximum number of guests allowed: {room.GuestCap}</p>
             <p>{room.BedNo} {room.BedType}</p>
-            <h4>Price: {room.Price} || Per night: {room.PerNight}</h4>
+            <h4>Price: ${room.Price} || Per night: ${room.PerNight}</h4>
 
             <div id="ButtonSpace">
                 <button className="Button" onClick={handleBooking}>

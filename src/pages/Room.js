@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Outlet, Link, useNavigate } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import { Container, Col, Form, Row } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext'
@@ -57,7 +57,7 @@ const Room = () => {
                 </Container>
 
                     <form id="Roomform" onSubmit={(e) => {e.preventDefault(); }}>
-                        <h1 class="FormTitle">Client Details</h1>
+                        <h1 class="FormTitle">Booking Details</h1>
 
                         {/*Full Name*/}
                         <Row className="mb-3">
