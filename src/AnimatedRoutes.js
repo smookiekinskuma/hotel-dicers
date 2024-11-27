@@ -30,7 +30,7 @@ function AnimatedRoutes() {
                     <Route path="/"element={<Bar />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/Room" element={<Room />} />
-                            <Route path="/Room/RoomBooking" element={<RoomBooking />} />
+                            <Route path="/Room/RoomBooking" element={<RoomBooking />} />    
                         <Route path="/Venue" element={<Venue />} />    
                             <Route path="/Venue/VenueBooking" element={<VenueBooking />} />
                         <Route path="/Inquiries" element={<Inquiries />} />

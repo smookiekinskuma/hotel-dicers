@@ -28,6 +28,11 @@
     border: 5px solid #31081f; 
   }
 
+#centerDiv {
+  align-items: center;
+  text-align: center;
+}
+
 .Button {
   background-color: #6b0f1a;
   color: #dce0d9;

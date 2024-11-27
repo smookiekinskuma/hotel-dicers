@@ -156,7 +156,6 @@ const Event = () => {
 
                         </Row>
 
-                        <Button type="submit" class="btn">Search for Available Venues</Button>
                     </form>
 
                 <Outlet />

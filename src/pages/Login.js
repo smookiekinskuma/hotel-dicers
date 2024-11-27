@@ -54,9 +54,12 @@ const Login = () => {
             localStorage.setItem('userLName', data.lName); // Store last name
             localStorage.setItem('userEmail', data.email); // Store email
             localStorage.setItem('userRole', data.role); // Store email
+            localStorage.setItem('userId', data._id); // Store email
+
             setSuccess('Login successful! Redirecting...');
             setTimeout(() => {
-              navigate('/'); // Redirect to homepage
+            navigate('/'); // Redirect to homepage
+            window.location.reload();
             }, 2000);
           } else {
             setError(data.msg || 'Login failed. Please try again.');

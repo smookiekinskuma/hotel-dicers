@@ -54,6 +54,13 @@ const Register = () => {
             const data = await res.json();
 
             if (res.ok) {
+                // Store additional user information in local storage
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('userFName', data.fName);
+                localStorage.setItem('userLName', data.lName);
+                localStorage.setItem('userEmail', data.email);
+                localStorage.setItem('userRole', data.role);
+                localStorage.setItem('userId', data._id); // Store the _id here
                 setSuccess('Registration Successful! Redirecting to login...');
                 setTimeout(() => {
                     navigate('/login'); // Redirecting to login page

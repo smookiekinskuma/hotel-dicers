@@ -26,9 +26,7 @@ import { useAuth } from '../context/AuthContext'; // Import useAuth
 const Bar = () => {
     const [clicked, setClicked] = useState(false);
     const { user, logout } = useAuth(); // Get user from context
-
-    console.log('User :', user);
-
+    
     const handleClick = () => {
         setClicked(!clicked);
     };
